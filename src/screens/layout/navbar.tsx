@@ -1,6 +1,18 @@
-import { Link, useMatchRoute } from "@tanstack/react-router"
+import { Link } from "@tanstack/react-router"
 import { Button, Typography } from "../../ui/elements"
 import { ApplicationRoutes } from "../../routes"
+import { NavLinks } from "./components"
+
+export interface NavItemsTypes {
+	to: string
+	href: string
+}
+const navItems: NavItemsTypes[] = [
+	{ to: "Home", href: ApplicationRoutes.HOME },
+	{ to: "About", href: ApplicationRoutes.ABOUT },
+	{ to: "Affiliate Store", href: ApplicationRoutes.AFFILIATE_STORE },
+	{ to: "Resources", href: ApplicationRoutes.RESOURCES },
+]
 
 export const Navbar = () => {
 	return (
@@ -17,45 +29,18 @@ export const Navbar = () => {
 						Doctor Snap
 					</Typography>
 				</figure>
-				<div className="flex gap-[2.644rem] items-center">
-					<NavItemLarge to="Home" href={ApplicationRoutes.HOME} />
-					<NavItemLarge to="About" href={ApplicationRoutes.ABOUT} />
-					<NavItemLarge
-						to="Affiliate Store"
-						href={ApplicationRoutes.AFFILIATE_STORE}
-					/>
-					<NavItemLarge to="Resources" href={ApplicationRoutes.RESOURCES} />
-				</div>
+
+				<NavLinks navItems={navItems} />
+
 				<div className="flex gap-6 items-center">
 					<Link to=".">
 						<Typography fontWeight="semi-bold" color={"tertiary600"}>
 							Log in
 						</Typography>
 					</Link>
-                    <Button primary text="Create Account"/>
+					<Button primary text="Create Account" />
 				</div>
 			</nav>
 		</nav>
-	)
-}
-
-const NavItemLarge = ({ to, href }: { to: string; href: string }) => {
-	const matchRoute = useMatchRoute()
-	const isActive = matchRoute({ to: href, fuzzy: true })
-
-	return (
-		<Link
-			to={href}
-			className={isActive ? "border-b-2 border-primary1300 py-0.5" : "py-0.5"}
-		>
-			<Typography
-				variant="body-l"
-				lineHeight="full"
-				fontWeight="medium"
-				color={isActive ? "primary1300" : "tertiary600"}
-			>
-				{to}
-			</Typography>
-		</Link>
 	)
 }
