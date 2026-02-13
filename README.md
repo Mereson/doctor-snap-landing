@@ -1,2 +1,2 @@
-# ryzone-renal
-The website for the ryzone renal medical consultation
+# Doctor Snap
+### A subsidiary of Ryzone Renal LLC
