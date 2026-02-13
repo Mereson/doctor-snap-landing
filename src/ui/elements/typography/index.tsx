@@ -99,6 +99,7 @@ const typography = cva("", {
 		},
 		lineHeight: {
 			"16": "leading-4",
+			"18": "leading-4.5",
 			"20": "leading-5",
 			"24": "leading-6",
 			"28": "leading-7",

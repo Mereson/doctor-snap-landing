@@ -22,6 +22,7 @@ export const variantMapping = {
 
 export type TypographyLineHeight =
 	| "16"
+	| "18"
 	| "20"
 	| "24"
 	| "28"

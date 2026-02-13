@@ -60,7 +60,24 @@
 	--color-green10: #1fc16b1a;
 	--color-green100: #84ebb4;
 	--color-green200: #1fc16b;
+	--radius-rounded-none: 0px; /* 0 */
+	--radius-1: 0.125rem; /* 2 */
+	--radius-2: 0.25rem; /* 4 */
+	--radius-3: 0.375rem; /* 6 */
+	--radius-4: 0.5rem; /* 8 */
+	--radius-5: 0.625rem; /* 10px */
+	--radius-6: 0.75rem; /* 12 */
+	--radius-7: 1rem; /* 16 */
+	--radius-8: 1.25rem; /* 20px */
+	--radius-9: 1.5rem; /* 24px */
+	--radius-10: 1.75rem; /* 28px */
+	--radius-11: 2rem; /* 32px */
+	--radius-12: 2.25rem; /* 36px */
+	--radius-13: 2.5rem; /* 40px */
+	--radius-14: 3rem; /* 48px */
 }
+
+
 
 .borderr {
 	--border: 1px solid rgb(158, 43, 43);
