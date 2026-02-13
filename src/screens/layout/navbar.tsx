@@ -4,7 +4,7 @@ import { ApplicationRoutes } from "../../routes"
 
 export const Navbar = () => {
 	return (
-		<nav className="grid place-content-center border-b border-b-tertiary100">
+		<nav className="grid place-content-center border-b fixed z-20 bg-white border-b-tertiary100">
 			<nav className="py-[1.344rem] px-16 text mx-auto max-w-[1440px] w-screen  flex justify-between">
 				<figure className="flex items-center gap-2">
 					<img src="/svgs/logo.svg" alt="Logo" />

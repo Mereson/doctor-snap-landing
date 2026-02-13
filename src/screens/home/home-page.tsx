@@ -1,6 +1,9 @@
+import { Hero } from "./sections"
 
 export const Home = () => {
-  return (
-    <div>Home</div>
-  )
+	return (
+		<>
+			<Hero />
+		</>
+	)
 }

@@ -7,8 +7,8 @@ const currentYear = new Date().getFullYear()
 
 export const Footer = () => {
 	return (
-		<footer className="max-w-[1400px] mx-auto">
-			<section className="rounded-8  bg-primary1300 p-8">
+		<footer className="max-w-[1440px] mx-auto p-8 ">
+			<section className="rounded-8 bg-primary1300 p-8">
 				<div className="grid grid-cols-5 pb-16 border-b-2 border-b-[#B5DDE73D]">
 					<div className="col-span-2 grid gap-6">
 						<figure className="flex items-center gap-2">
