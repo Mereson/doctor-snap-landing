@@ -39,22 +39,22 @@ const whyList: WhyListProps[] = [
 		title: "No Insurance Needed",
 		text: "Skip the paperwork, get medical care online without insurance approvals, forms, or limitations. Pay transparently and receive care when you need it—simple, direct, and stress-free.",
 	},
-	// {
-	// 	id: "2",
-	// 	assetIcon: "/svgs/Target.svg",
-	// 	title: "Specialized Care",
-	// 	text: "",
-	// },
-	// {
-	// 	id: "3",
-	// 	assetIcon: "/svgs/Lock.svg",
-	// 	title: "Privacy Comes First",
-	// 	text: "",
-	// },
-	// {
-	// 	id: "4",
-	// 	assetIcon: "/svgs/Dollar sign.svg",
-	// 	title: "Affordable Care Access",
-	// 	text: "",
-	// },
+	{
+		id: "2",
+		assetIcon: "/svgs/Target.svg",
+		title: "Specialized Care",
+		text: "Connect with qualified medical professionals who focus on specific areas of care. Receive informed guidance tailored to your needs, all through a seamless online experience.",
+	},
+	{
+		id: "3",
+		assetIcon: "/svgs/Lock.svg",
+		title: "Privacy Comes First",
+		text: "All interactions and data are protected with strong privacy standards. Your personal information remains private, secure, and fully under your control.",
+	},
+	{
+		id: "4",
+		assetIcon: "/svgs/Dollar sign.svg",
+		title: "Affordable Care Access",
+		text: "Get clear, upfront pricing with no hidden costs. Access medical care online at rates designed to be fair, transparent, and accessible.",
+	},
 ]

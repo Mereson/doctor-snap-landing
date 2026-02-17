@@ -9,7 +9,7 @@ export const WhyCard = ({ whyList }: { whyList: WhyListProps }) => {
 		<motion.div
 			layout
 			className={clsx(
-				"px-7.5 pt-52.5 pb-8.5 rounded-6 w-[19rem] hover:w-[26rem] overflow-hidden group cursor-pointer bg-white",
+				"px-7.5 pt-52.5 pb-8.5 rounded-6 w-76 hover:w-104 overflow-hidden group cursor-pointer bg-white",
 				"transition-all duration-500 ease-linear",
 				"hover:pt-43.5 hover:pb-5.5",
 			)}
@@ -42,12 +42,12 @@ export const WhyCard = ({ whyList }: { whyList: WhyListProps }) => {
 				</motion.figure>
 			</motion.div>
 
-			<motion.div className="w-[21.063rem] duration-600 group-hover:mt-10 max-h-0 group-hover:max-h-96 transition-all ease-initial">
+			<motion.div className="w-[21.063rem] duration-600 group-hover:mt-10 max-h-0 group-hover:max-h-96 transition-all ease-linear">
 				<motion.div
 					layout
 					className={clsx(
 						"translate-y-7 group-hover:delay-300 group-hover:translate-y-0 pointer-events-none opacity-0 group-hover:opacity-100",
-						"group-hover:duration-700  transition-all ease-initial",
+						"group-hover:duration-700 transition-all ease-initial",
 					)}
 				>
 					<Typography variant="body-xl" fontWeight="light" color="neutral800">
