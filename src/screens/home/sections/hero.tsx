@@ -14,7 +14,7 @@ export const Hero = () => {
 				</filter>
 				<rect width="100%" height="100%" filter="url(#multinoise)" />
 			</svg>
-			<section className="pt-53.5 pb-[2.313rem] grid max-w-[1440px] mx-auto place-items-center">
+			<section className="pt-53.5 grid max-w-[1440px] mx-auto place-items-center">
 				<Typography
 					variant="h1"
 					font={"title"}

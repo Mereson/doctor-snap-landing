@@ -29,7 +29,9 @@ export type TypographyLineHeight =
 	| "32"
 	| "36"
 	| "40"
+	| "60"
 	| "64"
+	| "72"
 	| "full"
 
 export type TypographyVariant = keyof typeof variantMapping

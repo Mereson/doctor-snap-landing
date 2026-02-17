@@ -7,7 +7,7 @@ export const Layout = () => {
 	const pathname = useRouterState({ select: (s) => s.location.pathname })
 
 	useEffect(() => {
-		window.scrollTo({ top: 0, behavior: "auto" })
+		window.scrollTo({ top: 0, behavior: "smooth" })
 	}, [pathname])
 
 	return (
