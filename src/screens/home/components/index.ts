@@ -1,2 +1,4 @@
 export * from "./why-card"
 export * from "./product-card"
+export * from "./editors-insight-card"
+export * from "./insights-card"

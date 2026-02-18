@@ -13,7 +13,7 @@ export interface ProductCardProps {
 export const AffiliateSection = () => {
 	return (
 		<section className="pt-12.5 pb-31.5 grid place-content-center">
-			<section className="max-w-[1440px] w-screen mx-auto ">
+			<section className="max-w-[1440px] w-screen mx-auto px-16">
 				<div className="flex justify-between">
 					<Typography
 						variant="h4"
@@ -43,7 +43,7 @@ export const AffiliateSection = () => {
 					order supports our mission to make healthcare accessible.
 				</Typography>
 
-				<div className="mt-[4.478rem] flex gap-8">
+				<div className="mt-[4.478rem] flex gap-8 justify-center">
 					{products.map((product, i) => (
 						<ProductCard key={i} product={product} />
 					))}
