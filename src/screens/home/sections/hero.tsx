@@ -35,8 +35,8 @@ export const Hero = () => {
 				</Typography>
 				<Button primary text="Book appointment" />
 				<section className="mt-[2.313rem] z-10 bg-white relative">
-					<div className="absolute inset-0 pointer-events-none">
-						<svg className="absolute inset-0 z-10 w-full h-full pointer-events-none opacity-10">
+					<div className="absolute inset-0  pointer-events-none">
+						<svg className="absolute z-10 w-full h-full pointer-events-none opacity-10">
 							<filter id="multinoise">
 								<feTurbulence
 									type="fractalNoise"
@@ -51,7 +51,7 @@ export const Hero = () => {
 						{/* <div className="bg-white top-[-60px] relative backdrop-blur-[82px] h-14 mask-b-from-0% " /> */}
 					</div>
 
-					<img src="/images/Hero-img.png" alt="Hero Image" />
+					<img src="/images/Hero-img.png" className="max-w-[1500px] w-full " alt="Hero Image" />
 				</section>
 			</section>
 		</section>
