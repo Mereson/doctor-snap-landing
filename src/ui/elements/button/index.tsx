@@ -20,7 +20,7 @@ const Button: React.FC<ButtonProps> = (props) => {
 		neutral,
 		text,
 		customClassname,
-		width = "fit",
+		width = "w-fit",
 		type = "button",
 		onClick,
 		loading,
