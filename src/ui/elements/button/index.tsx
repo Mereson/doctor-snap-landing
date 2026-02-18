@@ -5,6 +5,7 @@ interface ButtonProps {
 	secondary?: boolean
 	neutral?: boolean
 	text: string
+	img?: string
 	customClassname?: string
 	width?: "w-full" | "w-fit"
 	type?: "button" | "submit" | undefined
@@ -27,28 +28,31 @@ const Button: React.FC<ButtonProps> = (props) => {
 	} = props
 	return (
 		<div className={`relative group rounded-full overflow-hidden ${width}`}>
-			<div
-				className="
+			{!secondary && (
+				<div
+					className="
     absolute inset-0
     -translate-x-full
     group-hover:translate-x-full
     transition-transform duration-400 ease-linear
     pointer-events-none
   "
-			>
-				<div className="absolute top-5 left-[-20%] w-[200%] rotate-[-52.1deg]">
-					<div className="h-[4.45px] bg-white mb-0.25 " />
-					<div className="h-[2.34px] bg-white" />
+				>
+					<div className="absolute top-5 left-[-20%] w-[200%] rotate-[-52.1deg]">
+						<div className="h-[4.45px] bg-white mb-0.25 " />
+						<div className="h-[2.34px] bg-white" />
+					</div>
 				</div>
-			</div>
+			)}
 			<button
 				type={type}
 				onClick={onClick}
 				className={clsx(
 					"w-full cursor-pointer rounded-full py-4 px-6.25 font-semibold justify-center font-roboto-flex ",
-					"transition-colors duration-200 ease-linear flex gap-2.5 items-center",
+					"transition-colors duration-200 ease-linear flex gap-2 items-center",
 					primary && "bg-primary1300! text-white",
-					secondary && "bg-secondary900 text-white",
+					secondary &&
+						"bg-secondary900 text-white hover:bg-secondary1100 transition-colors duration-300 ease-out",
 					neutral && "bg-white text-primary1300s",
 					loading && "bg-gray-300 cursor-not-allowed!",
 					customClassname,
@@ -57,6 +61,14 @@ const Button: React.FC<ButtonProps> = (props) => {
 				{...rest}
 			>
 				{text}
+
+				{secondary && (
+					<img
+						src="/svgs/arrow-right-Icon.svg"
+						className="size-6 group-hover:translate-x-1 transition-all duration-300 ease-out"
+						alt="arrow right"
+					/>
+				)}
 			</button>
 		</div>
 	)

@@ -1,11 +1,13 @@
+import { Link } from "@tanstack/react-router"
 import { Typography } from "../../../ui/elements"
 import type { ProductCardProps } from "../sections"
+import clsx from "clsx"
 
 export const ProductCard = ({ product }: { product: ProductCardProps }) => {
-	const { productName, productImg, productDesc, icon } = product
+	const { productName, productImg, productDesc, icon, productLink } = product
 	return (
-		<div className="px-2">
-			<figure className="w-fit cursor-pointer grid place-items-center group">
+		<Link to={productLink} className="px-2 group">
+			<figure className="w-fit cursor-pointer grid place-items-center">
 				<img
 					src={productImg}
 					className="object-contain size-76 relative group-hover:-translate-y-11.75 duration-450 ease-linear transition-all"
@@ -13,7 +15,12 @@ export const ProductCard = ({ product }: { product: ProductCardProps }) => {
 				/>
 				<div className="w-[14.813rem] h-3.75 bg-neutral800 mt-7.5 blur-[10px] rounded-[50%] group-hover:w-[12.813rem] duration-450 ease-linear transition-all"></div>
 			</figure>
-			<div className="mt-16.5 rounded-5 w-fit bg-primary1300 pt-6 pb-4.5 px-3">
+			<div
+				className={clsx(
+					"mt-16.5 rounded-5 w-fit bg-primary1300 pt-6 pb-4.5 px-3 duration-400 ease-linear transition-all",
+					"group-hover:[box-shadow:0px_1px_3px_1px_#00000026,0px_1px_2px_0px_#0000004D] ",
+				)}
+			>
 				<div className="mb-2 flex gap-2">
 					<figure className="rounded-3 bg-primary100 size-6 grid place-content-center">
 						<img src={icon} alt="icon" />
@@ -31,6 +38,6 @@ export const ProductCard = ({ product }: { product: ProductCardProps }) => {
 					{productDesc}
 				</Typography>
 			</div>
-		</div>
+		</Link>
 	)
 }

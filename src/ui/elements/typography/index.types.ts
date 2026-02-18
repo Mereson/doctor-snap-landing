@@ -94,6 +94,7 @@ export type TypographyColors =
 	| "green10"
 	| "green100"
 	| "green200"
+	| "black"
 
 export type TypographyAlign =
 	| "start"
