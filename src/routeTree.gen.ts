@@ -11,6 +11,9 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as LayoutRouteImport } from './routes/_layout'
 import { Route as LayoutIndexRouteImport } from './routes/_layout.index'
+import { Route as LayoutResourcesRouteImport } from './routes/_layout.resources'
+import { Route as LayoutAffiliateStoreRouteImport } from './routes/_layout.affiliate-store'
+import { Route as LayoutAboutRouteImport } from './routes/_layout.about'
 
 const LayoutRoute = LayoutRouteImport.update({
   id: '/_layout',
@@ -21,24 +24,54 @@ const LayoutIndexRoute = LayoutIndexRouteImport.update({
   path: '/',
   getParentRoute: () => LayoutRoute,
 } as any)
+const LayoutResourcesRoute = LayoutResourcesRouteImport.update({
+  id: '/resources',
+  path: '/resources',
+  getParentRoute: () => LayoutRoute,
+} as any)
+const LayoutAffiliateStoreRoute = LayoutAffiliateStoreRouteImport.update({
+  id: '/affiliate-store',
+  path: '/affiliate-store',
+  getParentRoute: () => LayoutRoute,
+} as any)
+const LayoutAboutRoute = LayoutAboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => LayoutRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof LayoutIndexRoute
+  '/about': typeof LayoutAboutRoute
+  '/affiliate-store': typeof LayoutAffiliateStoreRoute
+  '/resources': typeof LayoutResourcesRoute
 }
 export interface FileRoutesByTo {
+  '/about': typeof LayoutAboutRoute
+  '/affiliate-store': typeof LayoutAffiliateStoreRoute
+  '/resources': typeof LayoutResourcesRoute
   '/': typeof LayoutIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/_layout': typeof LayoutRouteWithChildren
+  '/_layout/about': typeof LayoutAboutRoute
+  '/_layout/affiliate-store': typeof LayoutAffiliateStoreRoute
+  '/_layout/resources': typeof LayoutResourcesRoute
   '/_layout/': typeof LayoutIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/about' | '/affiliate-store' | '/resources'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/_layout' | '/_layout/'
+  to: '/about' | '/affiliate-store' | '/resources' | '/'
+  id:
+    | '__root__'
+    | '/_layout'
+    | '/_layout/about'
+    | '/_layout/affiliate-store'
+    | '/_layout/resources'
+    | '/_layout/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -61,14 +94,41 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LayoutIndexRouteImport
       parentRoute: typeof LayoutRoute
     }
+    '/_layout/resources': {
+      id: '/_layout/resources'
+      path: '/resources'
+      fullPath: '/resources'
+      preLoaderRoute: typeof LayoutResourcesRouteImport
+      parentRoute: typeof LayoutRoute
+    }
+    '/_layout/affiliate-store': {
+      id: '/_layout/affiliate-store'
+      path: '/affiliate-store'
+      fullPath: '/affiliate-store'
+      preLoaderRoute: typeof LayoutAffiliateStoreRouteImport
+      parentRoute: typeof LayoutRoute
+    }
+    '/_layout/about': {
+      id: '/_layout/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof LayoutAboutRouteImport
+      parentRoute: typeof LayoutRoute
+    }
   }
 }
 
 interface LayoutRouteChildren {
+  LayoutAboutRoute: typeof LayoutAboutRoute
+  LayoutAffiliateStoreRoute: typeof LayoutAffiliateStoreRoute
+  LayoutResourcesRoute: typeof LayoutResourcesRoute
   LayoutIndexRoute: typeof LayoutIndexRoute
 }
 
 const LayoutRouteChildren: LayoutRouteChildren = {
+  LayoutAboutRoute: LayoutAboutRoute,
+  LayoutAffiliateStoreRoute: LayoutAffiliateStoreRoute,
+  LayoutResourcesRoute: LayoutResourcesRoute,
   LayoutIndexRoute: LayoutIndexRoute,
 }
 

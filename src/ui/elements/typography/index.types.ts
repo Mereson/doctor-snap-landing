@@ -22,13 +22,16 @@ export const variantMapping = {
 
 export type TypographyLineHeight =
 	| "16"
+	| "18"
 	| "20"
 	| "24"
 	| "28"
 	| "32"
 	| "36"
 	| "40"
+	| "60"
 	| "64"
+	| "72"
 	| "full"
 
 export type TypographyVariant = keyof typeof variantMapping
@@ -91,6 +94,7 @@ export type TypographyColors =
 	| "green10"
 	| "green100"
 	| "green200"
+	| "black"
 
 export type TypographyAlign =
 	| "start"
