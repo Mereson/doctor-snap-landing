@@ -11,6 +11,9 @@
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.18",
+    "@tanstack/react-devtools": "^0.9.6",
+    "@tanstack/react-form": "^1.28.3",
+    "@tanstack/react-form-devtools": "^0.2.16",
     "@tanstack/react-router": "^1.159.5",
     "@tanstack/react-router-devtools": "^1.159.5",
     "class-variance-authority": "^0.7.1",

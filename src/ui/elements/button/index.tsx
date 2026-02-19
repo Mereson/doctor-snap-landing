@@ -27,16 +27,21 @@ const Button: React.FC<ButtonProps> = (props) => {
 		...rest
 	} = props
 	return (
-		<div className={`relative group rounded-full overflow-hidden ${width}`}>
-			{!secondary && (
+		<div
+			className={clsx(
+				`relative group rounded-full overflow-hidden transition-all duration-300 ease-linear ${width}`,
+				neutral &&
+					"hover:[box-shadow:4px_6px_16px_0px_#FFFFFF4D,-4px_4px_16px_0px_#FFFFFF4D]",
+				primary &&
+					"hover:[box-shadow:0px_1px_3px_0px_#0000004D,0px_4px_8px_3px_#00000026]",
+			)}
+		>
+			{primary && (
 				<div
-					className="
-    absolute inset-0
-    -translate-x-full
-    group-hover:translate-x-full
-    transition-transform duration-400 ease-linear
-    pointer-events-none
-  "
+					className={clsx(
+						" absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-400 ease-linear pointer-events-none ",
+						width === "w-full" && "duration-600",
+					)}
 				>
 					<div className="absolute top-5 left-[-20%] w-[200%] rotate-[-52.1deg]">
 						<div className="h-[4.45px] bg-white mb-0.25 " />
@@ -53,7 +58,7 @@ const Button: React.FC<ButtonProps> = (props) => {
 					primary && "bg-primary1300! text-white",
 					secondary &&
 						"bg-secondary900 text-white hover:bg-secondary1100 transition-colors duration-300 ease-out",
-					neutral && "bg-white text-primary1300s",
+					neutral && "bg-white text-primary1300s ",
 					loading && "bg-gray-300 cursor-not-allowed!",
 					customClassname,
 				)}

@@ -7,7 +7,7 @@ export const ProductCard = ({ product }: { product: ProductCardProps }) => {
 	const { productName, productImg, productDesc, icon, productLink } = product
 	return (
 		<Link to={productLink} className="px-2 group">
-			<figure className="w-fit cursor-pointer grid place-items-center">
+			<figure className="w-fit grid place-items-center">
 				<img
 					src={productImg}
 					className="object-contain size-76 relative group-hover:-translate-y-11.75 duration-450 ease-linear transition-all"

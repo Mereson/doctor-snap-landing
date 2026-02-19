@@ -64,17 +64,17 @@ export const InsightsCard = ({ insight }: { insight: InsightsCardProps }) => {
 								className="group-hover:stroke-secondary900 duration-400 ease-linear transition-colors"
 								d="M3.3335 8H12.6668"
 								stroke="#153842"
-								stroke-width="1.33333"
-								stroke-linecap="round"
-								stroke-linejoin="round"
+								strokeWidth="1.33333"
+								strokeLinecap="round"
+								strokeLinejoin="round"
 							/>
 							<path
 								className="group-hover:stroke-secondary900 duration-400 ease-linear transition-colors"
 								d="M8 3.33337L12.6667 8.00004L8 12.6667"
 								stroke="#153842"
-								stroke-width="1.33333"
-								stroke-linecap="round"
-								stroke-linejoin="round"
+								strokeWidth="1.33333"
+								strokeLinecap="round"
+								strokeLinejoin="round"
 							/>
 						</svg>
 					</div>

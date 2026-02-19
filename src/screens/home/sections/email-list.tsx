@@ -6,7 +6,7 @@ export const EmailListSection = () => {
 		<section className="grid place-content-center">
 			<section
 				className={clsx(
-					"max-w-[1500px] mx-auto pt-[4.438rem] w-screen pb-24 grid place-content-center relative",
+					"max-w-[1600px] mx-auto pt-[4.438rem] w-screen pb-24 grid place-content-center relative",
 					"bg-[url(/images/minimalist-home.png)] bg-center bg-cover",
 				)}
 			>
@@ -30,7 +30,7 @@ export const EmailListSection = () => {
 					<input
 						name="emailList"
 						placeholder="Enter your email address"
-						className="pl-[2.938rem] pr-7 py-6.25 rounded-full outline-0 w-full max-w-160 bg-white placeholder:text-tertiary700 text-primary1300"
+						className="pl-[2.938rem] pr-7 py-6.25 rounded-full font-roboto-flex outline-0 w-full max-w-160 bg-white placeholder:text-tertiary700 text-primary1300"
 					/>
 					<Button text="Subscribe" primary customClassname="px-[44px]!" />
 				</form>
