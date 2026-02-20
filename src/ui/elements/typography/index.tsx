@@ -5,6 +5,7 @@ import { cva } from "class-variance-authority"
 const typography = cva("", {
 	variants: {
 		intent: {
+			title: "text-[37.5rem]",
 			h1: "text-8xl", // 96px
 			h2: "text-[5.25rem]", // 84px
 			h3: "text-[3.635rem]", // 58px
@@ -81,7 +82,7 @@ const typography = cva("", {
 			green10: "text-[#1FC16B1A]",
 			green100: "text-[#84ebb4]",
 			green200: "text-[#1fc16b]",
-			black: "text-black"
+			black: "text-black",
 		},
 		font: {
 			title: "font-source-serif-4",
@@ -110,6 +111,7 @@ const typography = cva("", {
 			"60": "leading-15",
 			"64": "leading-16",
 			"72": "leading-18",
+			"300": "leading-75",
 			full: "md:leading-[100%] leading-[120%]",
 		},
 		underline: { always: "underline", hover: "hover:underline", none: "" },

@@ -75,9 +75,24 @@
 	--radius-12: 2.25rem; /* 36px */
 	--radius-13: 2.5rem; /* 40px */
 	--radius-14: 3rem; /* 48px */
+	--animate-carousel: carousel 10s infinite linear;
 }
 
-
+@keyframes carousel {
+	from {
+	  transform: translateX(0);
+	}
+	to {
+	  transform: translateX(-100%);
+	}
+  }
+  
+  .animate-carousel {
+	animation: var(--animate-carousel);
+	will-change: transform;
+	backface-visibility: hidden;
+	-webkit-backface-visibility: hidden;
+  }
 
 .borderr {
 	border: 1px solid rgb(158, 43, 43);

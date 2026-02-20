@@ -4,6 +4,7 @@ interface ButtonProps {
 	primary?: boolean
 	secondary?: boolean
 	neutral?: boolean
+	negative?: boolean
 	text: string
 	img?: string
 	customClassname?: string
@@ -18,6 +19,7 @@ const Button: React.FC<ButtonProps> = (props) => {
 		primary,
 		secondary,
 		neutral,
+		negative,
 		text,
 		customClassname,
 		width = "w-fit",
@@ -59,6 +61,8 @@ const Button: React.FC<ButtonProps> = (props) => {
 					secondary &&
 						"bg-secondary900 text-white hover:bg-secondary1100 transition-colors duration-300 ease-out",
 					neutral && "bg-white text-primary1300s ",
+					negative &&
+						"bg-white text-primary1200 px-7 border-primary1200 border-[1.11px] hover:bg-primary1200 hover:text-white duration-300!",
 					loading && "bg-gray-300 cursor-not-allowed!",
 					customClassname,
 				)}

@@ -23,7 +23,7 @@ export const AboutSection = () => {
 					/>
 					<figure className="w-160 h-[30.063rem] top-0 right-[17px] rounded-8 absolute ">
 						<img
-							src="/public/images/about-img.png"
+							src="/images/about-img.png"
 							className="rounded-8 w-full object-cover object-top h-full"
 							alt="about img"
 						/>

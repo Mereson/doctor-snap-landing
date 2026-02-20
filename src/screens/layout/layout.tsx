@@ -1,20 +1,15 @@
-import { Outlet, useRouterState } from "@tanstack/react-router"
+import { Outlet } from "@tanstack/react-router"
 import { Navbar } from "./navbar"
 import { Footer } from "./footer"
-import { useEffect } from "react"
+import { ScrollController } from "../../lib"
 
 export const Layout = () => {
-	const pathname = useRouterState({ select: (s) => s.location.pathname })
-
-	useEffect(() => {
-		window.scrollTo({ top: 0, behavior: "auto" })
-	}, [pathname])
-
 	return (
 		<>
 			<Navbar />
 			<Outlet />
 			<Footer />
+			<ScrollController />
 		</>
 	)
 }
