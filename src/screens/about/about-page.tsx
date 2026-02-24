@@ -1,6 +1,19 @@
-
-import { UnderConstruction } from "../layout/components"
+import {
+	AboutCTA,
+	AboutHero,
+	CreationStory,
+	Welcome,
+	WhatWeWant,
+} from "./sections"
 
 export const AboutPage = () => {
-	return <UnderConstruction />
+	return (
+		<>
+			<AboutHero />
+			<Welcome />
+			<CreationStory />
+			<WhatWeWant />
+			<AboutCTA />
+		</>
+	)
 }

@@ -2,6 +2,7 @@ import React from "react"
 import type { HTMLAttributes } from "react"
 
 export const variantMapping = {
+	title: "h1",
 	h1: "h1",
 	h2: "h2",
 	h3: "h3",
@@ -32,6 +33,7 @@ export type TypographyLineHeight =
 	| "60"
 	| "64"
 	| "72"
+	| "300"
 	| "full"
 
 export type TypographyVariant = keyof typeof variantMapping

@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router"
 import { Typography } from "../../../ui/elements"
-import type { ProductCardProps } from "../sections"
 import clsx from "clsx"
+import type { ProductCardProps } from "../../../lib/types"
 
 export const ProductCard = ({ product }: { product: ProductCardProps }) => {
 	const { productName, productImg, productDesc, icon, productLink } = product

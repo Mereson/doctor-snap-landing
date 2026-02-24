@@ -2,22 +2,7 @@ import { Link } from "@tanstack/react-router"
 import { Typography } from "../../../ui/elements"
 import { ApplicationRoutes } from "../../../routes"
 import { EditorsInsightCard, InsightsCard } from "../components"
-
-export interface EditorsArticeType {
-	articleImg: string
-	editorsImg: string
-	editorsName: string
-	articeTitle: string
-	articeText: string
-	articeLink: string
-}
-
-export interface InsightsCardProps {
-	tag: string
-	readTime: string
-	title: string
-	text: string
-}
+import { editorsArtice, resourceArticles } from "../../../lib/mock-data"
 
 export const InsightsSection = () => {
 	return (
@@ -45,8 +30,8 @@ export const InsightsSection = () => {
 				<div className="grid grid-cols-12 gap-8 place-items-start">
 					<EditorsInsightCard editorsArtice={editorsArtice} />
 					<div className="grid col-span-5 gap-8">
-						{insights.map((insight, i) => (
-							<InsightsCard key={i} insight={insight} />
+						{resourceArticles.slice(-2).map((insight) => (
+							<InsightsCard key={insight.id} insight={insight} />
 						))}
 					</div>
 				</div>
@@ -54,29 +39,3 @@ export const InsightsSection = () => {
 		</section>
 	)
 }
-
-const editorsArtice: EditorsArticeType = {
-	articleImg: "/images/cardiovascular model.png",
-	editorsImg: "/images/author img.png",
-	editorsName: "Dr. Ikeme",
-	articeTitle:
-		"The Future of Cardiology is on Your Wrist: A Deep Dive into Wearable Tech",
-	articeText:
-		"How modern consumer devices are bridging the gap in early detection of arrhythmias and what you should look for in your next device.",
-	articeLink: ".",
-}
-
-const insights: InsightsCardProps[] = [
-	{
-		tag: "Nutrition",
-		readTime: "5",
-		title: "Understanding Glycemic Index",
-		text: "Blood sugar spikes aren't just a concern for people with diabetes—they can affect anyone...",
-	},
-	{
-		tag: "Mental Health",
-		readTime: "7",
-		title: "The Physiology of Anxiety",
-		text: "Stress can show up as headaches, muscle tension, rapid heartbeat, or fatigue.",
-	},
-]

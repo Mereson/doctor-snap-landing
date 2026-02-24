@@ -37,6 +37,7 @@ export const NavLinks = ({ navItems }: { navItems: NavItemsTypes[] }) => {
 						ref={(el) => {
 							linkRefs.current[index] = el
 						}}
+						className="outline-0"
 					>
 						<Typography
 							variant="body-l"
@@ -54,7 +55,7 @@ export const NavLinks = ({ navItems }: { navItems: NavItemsTypes[] }) => {
 				<motion.div
 					className="absolute bottom-3 h-0.5 bg-primary1300"
 					animate={indicatorStyle}
-					transition={{ type: "spring", stiffness: 300, damping: 30,  }}
+					transition={{ type: "spring", stiffness: 300, damping: 30 }}
 				/>
 			)}
 		</div>

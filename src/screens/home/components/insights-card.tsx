@@ -1,10 +1,15 @@
 import { Link } from "@tanstack/react-router"
 import { Typography } from "../../../ui/elements"
-import type { InsightsCardProps } from "../sections"
 import clsx from "clsx"
+import type { ResourceArticlesType } from "../../../lib/types"
+import { ReadArticleButton } from "../../layout"
 
-export const InsightsCard = ({ insight }: { insight: InsightsCardProps }) => {
-	const { tag, readTime, title, text } = insight
+export const InsightsCard = ({
+	insight,
+}: {
+	insight: ResourceArticlesType
+}) => {
+	const { tag, readTime, articeText, articeTitle } = insight
 
 	return (
 		<Link to={"."}>
@@ -17,7 +22,7 @@ export const InsightsCard = ({ insight }: { insight: InsightsCardProps }) => {
 				<div className="flex gap-2 items-center">
 					<div className="px-2 py-1.5 bg-secondary200 rounded-2">
 						<Typography lineHeight="32" color={"secondary1100"}>
-							{tag}
+							{tag.tagName}
 						</Typography>
 					</div>
 					<Typography variant="body-s" color={"tertiary500"}>
@@ -31,53 +36,19 @@ export const InsightsCard = ({ insight }: { insight: InsightsCardProps }) => {
 						color={"primary1300"}
 						customClassName="mb-3 text-[2rem]! leading-9.5!"
 					>
-						{title}
+						{articeTitle}
 					</Typography>
 					<Typography
 						variant="body-2xl"
 						fontWeight="light"
 						color={"tertiary700"}
+						customClassName="line-clamp-3 "
 					>
-						{text}
+						{articeText}
 					</Typography>
 				</div>
 				<div className="p-2.5 w-fit">
-					<div className="flex gap-2.5 items-center w-fit">
-						<Typography
-							fontWeight="medium"
-							color={"primary1200"}
-							customClassName="group-hover:text-secondary900 duration-400 ease-linear transition-colors"
-						>
-							Read Article
-						</Typography>
-						{/* Arrow left dark */}
-
-						<svg
-							className="group-hover:translate-x-0.5 duration-400 ease-linear transition-all"
-							width="24"
-							height="24"
-							viewBox="0 0 16 16"
-							fill="none"
-							xmlns="http://www.w3.org/2000/svg"
-						>
-							<path
-								className="group-hover:stroke-secondary900 duration-400 ease-linear transition-colors"
-								d="M3.3335 8H12.6668"
-								stroke="#153842"
-								strokeWidth="1.33333"
-								strokeLinecap="round"
-								strokeLinejoin="round"
-							/>
-							<path
-								className="group-hover:stroke-secondary900 duration-400 ease-linear transition-colors"
-								d="M8 3.33337L12.6667 8.00004L8 12.6667"
-								stroke="#153842"
-								strokeWidth="1.33333"
-								strokeLinecap="round"
-								strokeLinejoin="round"
-							/>
-						</svg>
-					</div>
+					<ReadArticleButton textColor="primary1200" strokeColor="#153842" />
 				</div>
 			</article>
 		</Link>
