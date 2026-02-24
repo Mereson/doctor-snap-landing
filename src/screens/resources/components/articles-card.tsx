@@ -49,6 +49,7 @@ export const ArticlesCard = ({
 						font="title"
 						lineHeight="28"
 						color={"primary1300"}
+						customClassName="line-clamp-2"
 					>
 						{articeTitle}
 					</Typography>

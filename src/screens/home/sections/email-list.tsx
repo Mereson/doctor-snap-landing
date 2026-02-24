@@ -1,7 +1,14 @@
 import clsx from "clsx"
-import { Button, Typography } from "../../../ui/elements"
+import { Button, Input, Typography } from "../../../ui/elements"
+import { useForm } from "@tanstack/react-form"
 
 export const EmailListSection = () => {
+	const form = useForm({
+		defaultValues: { userEmail: "" },
+		onSubmit: async ({ value }) => {
+			console.log(value)
+		},
+	})
 	return (
 		<section
 			className={clsx(
@@ -25,14 +32,19 @@ export const EmailListSection = () => {
 					reviews, and community updates.
 				</Typography>
 			</div>
-			<form className="mt-5.5 flex gap-8 z-10 items-center">
-				<input
-					name="emailList"
-					placeholder="Enter your email address"
-					className="pl-[2.938rem] pr-7 py-6.25 rounded-full font-roboto-flex outline-0 w-full max-w-160 bg-white placeholder:text-tertiary700 text-primary1300"
+			<div className="mt-5.5 flex gap-8 z-10 items-center">
+				<form.Field
+					name="userEmail"
+					children={(field) => (
+						<Input
+							field={field}
+							placeholder="Enter your email address"
+							emailList
+						/>
+					)}
 				/>
 				<Button text="Subscribe" primary customClassname="px-[44px]!" />
-			</form>
+			</div>
 		</section>
 	)
 }
