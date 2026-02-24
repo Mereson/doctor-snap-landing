@@ -1,5 +1,6 @@
 import clsx from "clsx"
 import { Typography } from "../../../ui/elements"
+import { BookIcon } from "../../layout"
 
 export const CoreValues = ({
 	value,
@@ -23,22 +24,22 @@ export const CoreValues = ({
 		>
 			{value === "Compassion" && (
 				<figure className="rounded-full p-2.25 bg-[#14EDB925]">
-					<img src="/public/svgs/heart-Icon-green.svg" alt="heart icon" />
+					<img src="/svgs/heart-Icon-green.svg" alt="heart icon" />
 				</figure>
 			)}
 			{value === "Accessibility" && (
 				<figure className="rounded-full p-2.25 bg-[#73D3F125]">
-					<img src="/public/svgs/people-Icon.svg" alt="people icon" />
+					<img src="/svgs/people-Icon.svg" alt="people icon" />
 				</figure>
 			)}
 			{value === "Education" && (
 				<figure className="rounded-full p-2.25 bg-[#D1FF5D25]">
-					<img src="/public/svgs/book-Icon.svg" alt="book icon" />
+					<BookIcon />
 				</figure>
 			)}
 			{value === "Integrity" && (
 				<figure className="rounded-full p-2.25 bg-[#1D4D5A25]">
-					<img src="/public/svgs/shield-Icon.svg" alt="shield icon" />
+					<img src="/svgs/shield-Icon.svg" alt="shield icon" />
 				</figure>
 			)}
 			<Typography

@@ -1,4 +1,4 @@
-import type { ProductCardProps } from "../home/sections";
+import type { ProductCardProps } from "../types";
 
 export const products: ProductCardProps[] = [
 	{

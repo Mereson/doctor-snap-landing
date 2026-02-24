@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router"
 import { Typography } from "../../../ui/elements"
 import { ProductCard } from "../../home/components"
-import { products } from "../product-data"
+import { products } from "../../../lib/mock-data/product-data"
 
 export const AffiliateHero = () => {
 	return (
