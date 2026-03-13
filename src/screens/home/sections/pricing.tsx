@@ -1,18 +1,15 @@
+// import { useMemo } from "react"
+import { useGetAllPackages } from "../../../lib/services"
+import type { PackagesTypes } from "../../../lib/types"
 import { Typography } from "../../../ui/elements"
 import { PricingCard } from "../components"
 
-export interface PackagesTypes {
-	packageName: string
-	packageType: string
-	packageClass: "A" | "B" | "C"
-	packageFeatures: {
-		feature: string
-		info?: string
-	}[]
-	packagePrice: string
-}
-
 export const PricingSection = () => {
+
+	const { data, isLoading } = useGetAllPackages()
+
+	const packagesList: PackagesTypes[] = data || []
+
 	return (
 		<section className="grid place-content-center bg-[#FEFBFB] pt-12.5 pb-[10.938rem]">
 			<section className="max-w-[1440px] mx-auto grid place-content-center">
@@ -29,55 +26,70 @@ export const PricingSection = () => {
 					Transparent pricing designed to make quality healthcare accessible,
 					with no hidden costs or surprises.
 				</Typography>
-				<div className="mt-7.5 gap-8 grid grid-cols-3 place-items-center place-content-center">
-					{packagesList.map((packages, i) => (
-						<PricingCard key={i} packages={packages} />
-					))}
-				</div>
+				{isLoading ? (
+					"Loading..."
+				) : (
+					<div className="mt-7.5 gap-8 grid grid-cols-3 place-items-center place-content-center">
+						{packagesList.map((packages, i) => (
+							<PricingCard key={i} packages={packages} />
+						))}
+					</div>
+				)}
 			</section>
 		</section>
 	)
 }
 
-const packagesList: PackagesTypes[] = [
-	{
-		packageName: "General Physical & Routine Lab Tests",
-		packageType: "General Care",
-		packageClass: "A",
-		packageFeatures: [
-			{ feature: "30-minute video session.", info: "hey" },
-			{ feature: "Medications review." },
-			{ feature: "Refills and Prescriptions." },
-			{ feature: "Routine Lab Test and Written Review.", info: "" },
-		],
-		packagePrice: "$150",
-	},
-	{
-		packageName: "Extensive Health Evaluation",
-		packageType: "Premium Care",
-		packageClass: "C",
-		packageFeatures: [
-			{ feature: "One-hour video session.", info: "hey" },
-			{ feature: "Medications review." },
-			{ feature: "Refills and Prescriptions." },
-			{ feature: "Routine Lab Test and Written Review.", info: "" },
-			{ feature: "Age-appropriate Cancer Screening review" },
-			{ feature: "Cancer Screening Referrals" },
-		],
-		packagePrice: "$150",
-	},
-	{
-		packageName: "Targeted Health Concern",
-		packageType: "Specialized Care",
-		packageClass: "B",
-		packageFeatures: [
-			{ feature: "30-minute video session. ", info: "hey" },
-			{ feature: "Target Medications review." },
-			{
-				feature: "Written Lab Test review with Optional 15 mins Video Session.",
-			},
-			{ feature: "Targeted Lab Test to address health Issue" },
-		],
-		packagePrice: "$150",
-	},
-]
+// const packagesList: PackagesTypes[] = [
+// 	{
+// 		id: "1",
+// 		packageName: "General Physical & Routine Lab Tests",
+// 		packageType: "General Care",
+// 		packageClass: "A",
+// 		features: [
+// 			{
+// 				id: "1",
+// 				feature: { feature: "30-minute video session.", info: "hey" },
+// 			},
+// 			{ id: "2", feature: { feature: "Medications review." } },
+// 			{ id: "3", feature: { feature: "Refills and Prescriptions." } },
+// 			{
+// 				id: "4",
+// 				feature: { feature: "Routine Lab Test and Written Review.", info: "" },
+// 			},
+// 		],
+// 		packagePrice: "$150",
+// 	},
+// 	{
+// 		id: "2",
+// 		packageName: "Extensive Health Evaluation",
+// 		packageType: "Premium Care",
+// 		packageClass: "C",
+// 		features: [
+// 			{
+// 				id: "1",
+// 				feature: { feature: "One-hour video session.", info: "hey" },
+// 			},
+// 			{ id: "2", feature: { feature: "Medications review." } },
+// 			{ id: "3", feature: { feature: "Refills and Prescriptions." } },
+// 			{
+// 				id: "4",
+// 				feature: { feature: "Routine Lab Test and Written Review.", info: "" },
+// 			},
+// 			{
+// 				id: "5",
+// 				feature: { feature: "Age-appropriate Cancer Screening review" },
+// 			},
+// 			{ id: "6", feature: { feature: "Cancer Screening Referrals" } },
+// 		],
+// 		packagePrice: "$150",
+// 	},
+// 	{
+// 		id: "3",
+// 		packageName: "Targeted Health Concern",
+// 		packageType: "Specialized Care",
+// 		packageClass: "B",
+// 		features: [],
+// 		packagePrice: "$150",
+// 	},
+// ]

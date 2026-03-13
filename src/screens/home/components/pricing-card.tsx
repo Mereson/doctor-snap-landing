@@ -1,15 +1,17 @@
 import clsx from "clsx"
 import { Button, Typography } from "../../../ui/elements"
-import type { PackagesTypes } from "../sections"
+import type { PackagesTypes } from "../../../lib/types"
+
 
 export const PricingCard = ({ packages }: { packages: PackagesTypes }) => {
 	const {
 		packageName,
 		packageClass,
 		packageType,
-		packageFeatures,
+		features,
 		packagePrice,
 	} = packages
+
 
 	return (
 		<div
@@ -50,11 +52,11 @@ export const PricingCard = ({ packages }: { packages: PackagesTypes }) => {
 					lineHeight="32"
 					customClassName="grid gap-y-1.5"
 				>
-					{packageFeatures.map((list, i) => (
+					{features.map((list, i) => (
 						<li key={i} className="flex gap-2.5 items-center">
 							<img src="/svgs/check-icon.svg" alt="check icon" />
-							{list.feature}
-							{list.info && <img src="/svgs/Info-icon.svg" alt="info icon" />}
+							{list.feature.feature}
+							{list.feature.info && <img src="/svgs/Info-icon.svg" alt="info icon" />}
 						</li>
 					))}
 				</Typography>

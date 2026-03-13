@@ -27,25 +27,17 @@ export interface EditorsArticeType extends ResourceArticlesType {
 	editorsName: string
 }
 
-// type ResourcesTagBgColors =
-//   | '#E8FFAE'
-//   | 'GovTech'
-//   | 'Cybersecurity'
-//   | 'EdTech'
-//   | 'HealthTech'
-//   | 'CleanEnergy'
-//   | 'ArtificialIntelligence'
-//   | 'Fintech'
-//   | 'other';
-
-// const mappedCategory: Record<string, IdeaCategory> = {
-//   'Agric Tech': 'AgricTech',
-//   'Gov Tech': 'GovTech',
-//   Cybersecurity: 'Cybersecurity',
-//   'Ed Tech': 'EdTech',
-//   'Health Tech': 'HealthTech',
-//   'Clean Energy': 'CleanEnergy',
-//   'Artificial Intelligence': 'ArtificialIntelligence',
-//   'Fin Tech': 'Fintech',
-//   Other: 'other',
-// };
+export interface PackagesTypes {
+	id: string
+	packageName: string
+	packageType: string
+	packageClass: "A" | "B" | "C"
+	features: {
+		id: string
+		feature: {
+			feature: string
+			info?: string
+		}
+	}[]
+	packagePrice: string
+}
