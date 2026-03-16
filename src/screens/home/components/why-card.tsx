@@ -7,7 +7,7 @@ export const WhyCard = ({ whyList }: { whyList: WhyListProps }) => {
 	return (
 		<div
 			className={clsx(
-				"px-7.5 pt-52.5 pb-8.5 rounded-6 w-76 hover:w-104 hover:[box-shadow:0px_2px_6px_2px_#00000026,0px_1px_2px_0px_#0000004D] overflow-hidden group cursor-pointer bg-white",
+				"px-7.5 pt-52.5 pb-8.5 rounded-6 sm:w-76 hover:w-104 hover:[box-shadow:0px_2px_6px_2px_#00000026,0px_1px_2px_0px_#0000004D] overflow-hidden group cursor-pointer bg-white",
 				"transition-all duration-500 ease-linear",
 				"hover:pt-43.5 hover:pb-5.5",
 			)}

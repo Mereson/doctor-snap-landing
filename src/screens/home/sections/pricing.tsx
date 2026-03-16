@@ -5,7 +5,6 @@ import { Typography } from "../../../ui/elements"
 import { PricingCard } from "../components"
 
 export const PricingSection = () => {
-
 	const { data, isLoading } = useGetAllPackages()
 
 	const packagesList: PackagesTypes[] = data || []
@@ -18,7 +17,7 @@ export const PricingSection = () => {
 					font="title"
 					color={"primary1300"}
 					align="center"
-					customClassName="leading-[5.438rem]! mb-4"
+					customClassName="leading-[5.438rem]! mb-4 max-sm:text-[32px]"
 				>
 					Transparent Pricing
 				</Typography>
@@ -29,7 +28,7 @@ export const PricingSection = () => {
 				{isLoading ? (
 					"Loading..."
 				) : (
-					<div className="mt-7.5 gap-8 grid grid-cols-3 place-items-center place-content-center">
+					<div className="mt-7.5 gap-8 grid grid-cols-1 max-sm:px-5 sm:grid-cols-3 place-items-center place-content-center">
 						{packagesList.map((packages, i) => (
 							<PricingCard key={i} packages={packages} />
 						))}

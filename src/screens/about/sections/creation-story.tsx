@@ -1,4 +1,4 @@
-import { Typography } from "../../../ui/elements"
+import { Image, Typography } from "../../../ui/elements"
 
 export const CreationStory = () => {
 	return (
@@ -12,10 +12,12 @@ export const CreationStory = () => {
 				alt="dots3"
 			/>
 			<figure className="mt-[4.631rem] ml-13.25 rounded-9 max-w-[34.675rem] w-full bg-primary1200 max-h-[26.143rem] h-full ">
-				<img
-					src="/images/video-consultation-image.png"
-					className="max-w-[33.613rem] h-full rounded-9"
-					alt=""
+				<Image
+					avif="/images/video-consultation-image.avif"
+					webp="/images/video-consultation-image.webp"
+					img="/images/video-consultation-image.png"
+					desc="Consultation img"
+					imgClass="max-w-[33.613rem] h-full rounded-9"
 				/>
 			</figure>
 			<article className="grid gap-8 w-full">

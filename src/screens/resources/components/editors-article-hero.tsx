@@ -1,6 +1,6 @@
 import clsx from "clsx"
 import type { EditorsArticeType } from "../../../lib/types"
-import { Typography } from "../../../ui/elements"
+import { Image, Typography } from "../../../ui/elements"
 import { Link } from "@tanstack/react-router"
 import { ClockIcon, ReadArticleButton } from "../../layout"
 import { TagBadge } from "./tag-badge"
@@ -35,10 +35,11 @@ export const EditorsArticleHero = ({
 					)}
 				></div>
 
-				<img
-					src={articleImg}
-					className="rounded-7 w-full h-full object-cover"
-					alt="article image"
+				<Image
+					img={articleImg}
+					desc="article image"
+					imgClass="rounded-7 w-full h-full object-cover"
+					priority
 				/>
 
 				<article className=" px-8 absolute bottom-[2.063rem]">
@@ -79,7 +80,7 @@ export const EditorsArticleHero = ({
 					</div>
 					<div className="flex items-center mt-6 justify-between w-screen max-w-[75.813rem]">
 						<div className="flex gap-4 items-center">
-							<TagBadge tag={tag}/>
+							<TagBadge tag={tag} />
 							<div className="flex items-center gap-1.5">
 								<ClockIcon strokeColor="white" />
 								<Typography

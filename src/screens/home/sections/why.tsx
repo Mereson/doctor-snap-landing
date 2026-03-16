@@ -10,9 +10,9 @@ export interface WhyListProps {
 
 export const WhySection = () => {
 	return (
-		<section className="py-[11.313rem] grid place-content-center bg-[#FEFBFB]">
+		<section className="py-17 sm:py-[11.313rem] grid place-content-center bg-[#FEFBFB]">
 			<section className="max-w-[1440px] w-screen mx-auto">
-				<div className="max-w-273 mb-8 grid gap-0.25 px-16">
+				<div className="sm:max-w-273 mb-8 grid gap-0.25 px-6 sm:px-16">
 					<Typography variant="h4" lineHeight="72" font="title">
 						Why <i> Doctor Snap?</i>
 					</Typography>
@@ -22,7 +22,7 @@ export const WhySection = () => {
 						it.
 					</Typography>
 				</div>
-				<div className="flex justify-center gap-8 items-start">
+				<div className="flex flex-wrap justify-center gap-8 mx-9 sm:mx-0 items-start">
 					{whyList.map((item) => (
 						<WhyCard key={item.id} whyList={item} />
 					))}

@@ -1,5 +1,5 @@
 import clsx from "clsx"
-import { Button, Typography } from "../../../ui/elements"
+import { Button, Image, Typography } from "../../../ui/elements"
 import { useNavigate } from "@tanstack/react-router"
 import { ApplicationRoutes } from "../../../routes"
 
@@ -30,10 +30,13 @@ export const AboutHero = () => {
 				/>
 			</article>
 			<figure className="max-w-137.5 w-screen relative max-h-[45.967rem] h-screen rounded-9 bg-primary1200">
-				<img
-					src="/images/about-img.png"
-					className="max-w-130 h-full rounded-9 w-full object-cover object-top"
-					alt="about image"
+				<Image
+					avif="/images/about-img.avif"
+					webp="/images/about-img.webp"
+					img="/images/about-img.png"
+					desc="about image"
+					imgClass="max-w-130 h-full rounded-9 w-full object-cover object-top"
+					priority
 				/>
 				<div
 					className={clsx(

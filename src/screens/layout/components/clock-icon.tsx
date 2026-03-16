@@ -11,7 +11,7 @@ export const ClockIcon = ({
 			fill="none"
 			xmlns="http://www.w3.org/2000/svg"
 		>
-			<g clip-path="url(#clip0_247_459)">
+			<g clipPath="url(#clip0_247_459)">
 				<path
 					d="M6.99658 3.49805V6.99631L9.32876 8.1624"
 					stroke={strokeColor}

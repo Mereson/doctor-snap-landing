@@ -1,17 +1,16 @@
-import { Link } from "@tanstack/react-router"
-import { Typography } from "../../../ui/elements"
+import { Image, Typography } from "../../../ui/elements"
 import clsx from "clsx"
 import type { ProductCardProps } from "../../../lib/types"
 
 export const ProductCard = ({ product }: { product: ProductCardProps }) => {
-	const { productName, productImg, productDesc, icon, productLink } = product
+	const { productName, productImg, productDesc, icon } = product
 	return (
-		<Link to={productLink} className="px-2 group">
+		<div className="px-2 pb-8 sm:pb-0 group">
 			<figure className="w-fit grid place-items-center">
-				<img
-					src={productImg}
-					className="object-contain size-76 relative group-hover:-translate-y-11.75 duration-450 ease-linear transition-all"
-					alt="store image"
+				<Image
+					img={productImg}
+					desc="store image"
+					imgClass="object-contain size-76 relative group-hover:-translate-y-11.75 duration-450 ease-linear transition-all"
 				/>
 				<div className="w-[14.813rem] h-3.75 bg-neutral800 mt-7.5 blur-[10px] rounded-[50%] group-hover:w-[12.813rem] duration-450 ease-linear transition-all"></div>
 			</figure>
@@ -38,6 +37,6 @@ export const ProductCard = ({ product }: { product: ProductCardProps }) => {
 					{productDesc}
 				</Typography>
 			</div>
-		</Link>
+		</div>
 	)
 }

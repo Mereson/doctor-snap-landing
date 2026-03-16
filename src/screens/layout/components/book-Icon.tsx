@@ -11,7 +11,7 @@ export const BookIcon = ({
 			fill="none"
 			xmlns="http://www.w3.org/2000/svg"
 		>
-			<g clip-path="url(#clip0_461_559)">
+			<g clipPath="url(#clip0_461_559)">
 				<path
 					d="M8.99316 5.24585V15.7377"
 					stroke={strokeColor}
