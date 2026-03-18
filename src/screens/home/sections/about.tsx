@@ -19,9 +19,9 @@ export const AboutSection = () => {
 						ease: "easeInOut",
 						repeatDelay: 1,
 					}}
-					className="w-full sm:w-160 h-58 sm:h-[30.337rem] bg-secondary200 rounded-8"
+					className="w-full sm:w-160 max-[475px]:h-58 h-80 sm:h-[30.337rem] bg-secondary200 rounded-8"
 				/>
-				<figure className="w-full sm:w-160 h-58 sm:h-[30.063rem] top-0 right-2 sm:right-[17px] rounded-8 absolute ">
+				<figure className="w-full sm:w-160 max-[475px]:h-58 h-80 sm:h-[30.063rem] top-0 right-2 sm:right-[17px] rounded-8 absolute ">
 					<Image
 						avif="/images/about-img.avif"
 						webp="/images/about-img.webp"
