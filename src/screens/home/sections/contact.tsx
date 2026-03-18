@@ -27,28 +27,30 @@ export const ContactSection = () => {
 	return (
 		<section className="grid place-content-center bg-[#FEFBFB] pt-12.5 pb-[2.438rem]">
 			<section className="max-w-[1440px] mx-auto grid place-content-center">
+				<div className="max-sm:px-20 max-[375px]:px-10! grid max-sm:gap-3">
 				<Typography
 					variant="h4"
 					font="title"
 					lineHeight="72"
 					color={"primary1300"}
 					align="center"
+					customClassName="max-sm:text-[32px] max-sm:leading-[38px]"
 				>
 					Contact Us
 				</Typography>
 				<Typography lineHeight="32" color={"tertiary700"} align="center">
 					Have questions about the affiliate store or our services?
 				</Typography>
-
+				</div>
 				<div
 					className={clsx(
-						"rounded-7 grid gap-[3.063rem] px-13 pt-[2.688rem] pb-[2.938rem] mt-6.25",
-						"max-w-[60.563rem] w-screen place-items-center",
+						"rounded-7 grid gap-[3.063rem] px-5 sm:px-13 pt-[2.688rem] pb-[2.938rem] max-sm:mx-3.5 mt-6.25",
+						"max-w-[60.563rem] sm:w-screen place-items-center",
 						"bg-white [box-shadow:0px_1px_3px_1px_#00000026,0px_1px_2px_0px_#0000004D]",
 					)}
 				>
-					<div className="grid gap-8 grid-cols-1 place-content-center w-full">
-						<div className="col-span-1 grid grid-cols-2 gap-8 w-full">
+					<div className="grid gap-8 grid-cols-1 place-content-center w-full ">
+						<div className="col-span-1 grid grid-cols-2 gap-4 sm:gap-8 w-full">
 							<form.Field
 								name="firstName"
 								children={(field) => (

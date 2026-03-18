@@ -3,6 +3,8 @@ import { Button, HamburgerIcon, Typography } from "../../ui/elements"
 import { ApplicationRoutes } from "../../routes"
 import { NavLinks } from "./components"
 import { useMediaQuery } from "usehooks-ts"
+import { AnimatePresence, motion } from "motion/react"
+import { useEffect, useState, type Dispatch, type SetStateAction } from "react"
 
 export interface NavItemsTypes {
 	to: string
@@ -16,7 +18,20 @@ const navItems: NavItemsTypes[] = [
 ]
 
 export const Navbar = () => {
-	const sm = useMediaQuery("(max-width: 425px)")
+	const sm = useMediaQuery("(max-width: 640px)")
+	const [open, setOpen] = useState(false)
+
+	useEffect(() => {
+		if (open) {
+			document.body.style.overflow = "hidden"
+		} else {
+			document.body.style.overflow = ""
+		}
+
+		return () => {
+			document.body.style.overflow = ""
+		}
+	}, [open])
 	return (
 		<nav className="grid place-content-center border-b w-screen fixed z-20 bg-white border-b-tertiary100">
 			<nav className="py-[1.344rem] px-8 sm:px-16 text mx-auto max-w-[1440px] w-screen flex justify-between">
@@ -35,7 +50,7 @@ export const Navbar = () => {
 					<NavLinks navItems={navItems} />
 				) : (
 					<>
-						<HamburgerIcon open={false} color="black" />
+						<MobileNav open={open} setOpen={setOpen} />
 					</>
 				)}
 				{!sm && (
@@ -50,5 +65,39 @@ export const Navbar = () => {
 				)}
 			</nav>
 		</nav>
+	)
+}
+
+const MobileNav = ({
+	open,
+	setOpen,
+}: {
+	open: boolean
+	setOpen: Dispatch<SetStateAction<boolean>>
+}) => {
+	return (
+		<AnimatePresence>
+			<section className="hidden max-sm:grid">
+				<div
+					key={1}
+					className="z-50 cursor-pointer"
+					onClick={() => {
+						setOpen((p) => !p)
+					}}
+				>
+					<HamburgerIcon open={open} color={"black"} />
+				</div>
+
+				<motion.div
+					key={2}
+					initial={false}
+					animate={open ? { x: 0 } : { x: 948 }}
+					transition={{ duration: 0.7 }}
+					className="bg-[#FFF] min-h-screen h-[110vh] z-40 grid place-content-center inset-0 w-screen left-0 top-[-50px] overflow-hidden fixed"
+				>
+					<NavLinks navItems={navItems} setOpen={setOpen} />
+				</motion.div>
+			</section>
+		</AnimatePresence>
 	)
 }

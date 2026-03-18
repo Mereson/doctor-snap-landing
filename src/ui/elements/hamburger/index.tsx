@@ -21,7 +21,7 @@ export const HamburgerIcon = ({
 					closed: { rotate: 0, y: 0 },
 					open: { rotate: -45, y: 6 },
 				}}
-				transition={{ duration: 0.6 }}
+				transition={{ duration: 0.2 }}
 				d="M3.97461 5.97485H19.9746"
 				stroke={color}
 				strokeWidth="2"
@@ -34,7 +34,7 @@ export const HamburgerIcon = ({
 					closed: { opacity: 1 },
 					open: { opacity: 0 },
 				}}
-				transition={{ duration: 0.45 }}
+				transition={{ duration: 0.2 }}
 				d="M3.97461 11.9748H19.9746"
 				stroke={color}
 				strokeWidth="2"
@@ -47,7 +47,7 @@ export const HamburgerIcon = ({
 					closed: { rotate: 0, y: 0 },
 					open: { rotate: 45, y: -6 },
 				}}
-				transition={{ duration: 0.6 }}
+				transition={{ duration: 0.2 }}
 				d="M3.97461 17.9748H19.9746"
 				stroke={color}
 				strokeWidth="2"

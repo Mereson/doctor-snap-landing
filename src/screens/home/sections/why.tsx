@@ -1,3 +1,4 @@
+import { useState } from "react"
 import { Typography } from "../../../ui/elements"
 import { WhyCard } from "../components"
 
@@ -9,11 +10,21 @@ export interface WhyListProps {
 }
 
 export const WhySection = () => {
+	const [clicked, setClicked] = useState({
+		id: "",
+		open: false
+	})
+
 	return (
 		<section className="py-17 sm:py-[11.313rem] grid place-content-center bg-[#FEFBFB]">
 			<section className="max-w-[1440px] w-screen mx-auto">
 				<div className="sm:max-w-273 mb-8 grid gap-0.25 px-6 sm:px-16">
-					<Typography variant="h4" lineHeight="72" font="title">
+					<Typography
+						variant="h4"
+						lineHeight="72"
+						font="title"
+						customClassName="max-sm:text-[1.75rem]"
+					>
 						Why <i> Doctor Snap?</i>
 					</Typography>
 					<Typography variant="body-l" color={"tertiary700"}>
@@ -24,7 +35,12 @@ export const WhySection = () => {
 				</div>
 				<div className="flex flex-wrap justify-center gap-8 mx-9 sm:mx-0 items-start">
 					{whyList.map((item) => (
-						<WhyCard key={item.id} whyList={item} />
+						<WhyCard
+							key={item.id}
+							whyList={item}
+							clicked={clicked}
+							setClicked={setClicked}
+						/>
 					))}
 				</div>
 			</section>

@@ -19,11 +19,9 @@ export const Home = () => {
 			<AffiliateSection />
 			<InsightsSection />
 			<PricingSection />
-			<section className="hidden">
-				<EmailListSection />
-				<ContactSection />
-				<CTASection />
-			</section>
+			<EmailListSection />
+			<ContactSection />
+			<CTASection />
 		</>
 	)
 }

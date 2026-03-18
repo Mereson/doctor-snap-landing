@@ -7,10 +7,10 @@ const currentYear = new Date().getFullYear()
 
 export const Footer = () => {
 	return (
-		<footer className="max-w-[1440px] hidden mx-auto p-8 ">
-			<section className="rounded-8 bg-primary1300 p-8">
-				<div className="grid grid-cols-5 pb-16 border-b-2 border-b-[#B5DDE73D]">
-					<div className="col-span-2 grid gap-6">
+		<footer className="max-w-[1440px] mx-auto p-2 sm:p-8 ">
+			<section className="rounded-8 bg-primary1300 max-sm:px-4.25 p-8">
+				<div className="grid grid-cols-5 max-sm:gap-[2.563rem] pb-[2.563rem] sm:pb-16 border-b-2 border-b-[#B5DDE73D]">
+					<div className="col-span-full sm:col-span-2 grid gap-6">
 						<figure className="flex items-center gap-2">
 							<Logo fill="fill-primary1200" />
 							<Typography
@@ -32,7 +32,7 @@ export const Footer = () => {
 						</Typography>
 					</div>
 
-					<div className="col-span-2 flex items-start gap-43.5 ">
+					<div className="col-span-full sm:col-span-2 flex flex-col sm:flex-row items-start gap-[2.563rem] sm:gap-43.5 ">
 						<div className="grid gap-6">
 							<Typography
 								variant="body-m"
@@ -63,7 +63,7 @@ export const Footer = () => {
 								</li>
 							</Typography>
 						</div>
-						<div className="grid gap-6">
+						<div className="grid gap-6 ">
 							<Typography
 								variant="body-m"
 								fontWeight="medium"
@@ -90,7 +90,7 @@ export const Footer = () => {
 						</div>
 					</div>
 
-					<div className="flex flex-col gap-6">
+					<div className="max-sm:grid">
 						<Typography
 							variant="body-m"
 							fontWeight="medium"
@@ -98,7 +98,7 @@ export const Footer = () => {
 						>
 							Connect
 						</Typography>
-						<div className="flex gap-4">
+						<div className="flex gap-4 mt-6">
 							<figure className="size-12 rounded-3 items-center justify-center flex bg-primary1100">
 								<img src="/svgs/linkedin.svg" alt="linkedin logo" />
 							</figure>
@@ -114,7 +114,7 @@ export const Footer = () => {
 						</div>
 					</div>
 				</div>
-				<div className="pt-[2.063rem] flex justify-between">
+				<div className="pt-3 sm:pt-[2.063rem] flex flex-col sm:flex-row items-center justify-between max-sm:gap-y-2">
 					<Typography variant="body-xs" color={"tertiary100"} lineHeight="18">
 						© {currentYear} Doctor Snap Inc. All rights reserved.
 					</Typography>

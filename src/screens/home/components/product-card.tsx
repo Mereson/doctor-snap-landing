@@ -5,7 +5,7 @@ import type { ProductCardProps } from "../../../lib/types"
 export const ProductCard = ({ product }: { product: ProductCardProps }) => {
 	const { productName, productImg, productDesc, icon } = product
 	return (
-		<div className="px-2 pb-8 sm:pb-0 group">
+		<div className="px-2 pb-8 grid max-sm:place-items-center sm:pb-0 group">
 			<figure className="w-fit grid place-items-center">
 				<Image
 					img={productImg}

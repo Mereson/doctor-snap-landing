@@ -3,7 +3,7 @@ import { Image, Typography } from "../../../ui/elements"
 import { motion } from "framer-motion"
 
 export const AboutSection = () => {
-	const sm = useMediaQuery("(max-width: 426px)")
+	const sm = useMediaQuery("(max-width: 640px)")
 	return (
 		<section className="pt-[6.786rem] sm:pt-[11.938rem] pb-7 max-w-[1440px] w-screen mx-auto gap-10.5 sm:gap-[5.292rem] px-6.5 sm:px-[4.063rem] flex flex-col sm:flex-row ">
 			<div className="relative top-[1.112rem]">
@@ -46,6 +46,7 @@ export const AboutSection = () => {
 					font="title"
 					lineHeight={sm ? "40" : "72"}
 					color={"primary1300"}
+					customClassName="max-sm:text-[1.75rem]"
 				>
 					Bridging the gap between patient and provider.
 				</Typography>

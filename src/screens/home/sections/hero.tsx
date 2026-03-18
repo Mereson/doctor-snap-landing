@@ -2,7 +2,7 @@ import { useMediaQuery } from "usehooks-ts"
 import { Button, Image, Typography } from "../../../ui/elements"
 
 export const Hero = () => {
-	const sm = useMediaQuery("(max-width: 426px)")
+	const sm = useMediaQuery("(max-width: 640px)")
 	return (
 		<section className="grid place-content-center overflow-hidden relative">
 			<svg className="absolute inset-0 w-full h-full pointer-events-none opacity-10">

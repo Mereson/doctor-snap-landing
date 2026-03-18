@@ -12,7 +12,10 @@ export default defineConfig({
 			autoCodeSplitting: true,
 		}),
 		react(),
-    tailwindcss()
+		tailwindcss(),
 		// ...
 	],
+	server: {
+		host: true,
+	},
 })

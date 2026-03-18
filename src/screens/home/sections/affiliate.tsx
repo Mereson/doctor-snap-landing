@@ -15,6 +15,7 @@ export const AffiliateSection = () => {
 					font="title"
 					lineHeight="72"
 					color={"primary1300"}
+					customClassName="max-sm:text-[32px] "
 				>
 					Our Affiliate Store
 				</Typography>
@@ -33,13 +34,26 @@ export const AffiliateSection = () => {
 			<Typography
 				variant="body-l"
 				color={"tertiary700"}
-				customClassName="max-w-[54.063rem]"
+				customClassName="max-w-[54.063rem] max-sm:text-base max-sm:leading-[32px]"
 			>
 				Explore our affiliate store for products that make healthy living
 				easier. You'll complete purchases on trusted partner sites, and every
 				order supports our mission to make healthcare accessible.
 			</Typography>
 
+			{sm && (
+				<div className="flex justify-end">
+					<Link to={ApplicationRoutes.AFFILIATE_STORE}>
+						<Typography
+							fontWeight="medium"
+							customClassName="underline mt-6 w-fit"
+							color={"primary1200"}
+						>
+							Visit Affliliate Store
+						</Typography>
+					</Link>
+				</div>
+			)}
 			<div className="mt-[4.478rem] flex sm:flex-row max-sm:items-center flex-col gap-8 justify-center">
 				{products.map((product, i) => (
 					<ProductCard key={i} product={product} />

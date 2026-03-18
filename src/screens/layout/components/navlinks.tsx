@@ -1,10 +1,23 @@
 import { Link, useRouterState } from "@tanstack/react-router"
-import { useEffect, useRef, useState } from "react"
+import {
+	useEffect,
+	useRef,
+	useState,
+	type Dispatch,
+	type SetStateAction,
+} from "react"
 import { Typography } from "../../../ui/elements"
 import * as motion from "motion/react-client"
 import type { NavItemsTypes } from "../navbar"
+import { useMediaQuery } from "usehooks-ts"
 
-export const NavLinks = ({ navItems }: { navItems: NavItemsTypes[] }) => {
+export const NavLinks = ({
+	navItems,
+	setOpen,
+}: {
+	navItems: NavItemsTypes[]
+	setOpen?: Dispatch<SetStateAction<boolean>>
+}) => {
 	const pathname = useRouterState({ select: (s) => s.location.pathname })
 	const activeIndex = navItems.findIndex(
 		(item) => pathname === item.href || pathname.startsWith(item.href + "/"),
@@ -12,6 +25,8 @@ export const NavLinks = ({ navItems }: { navItems: NavItemsTypes[] }) => {
 	const [indicatorStyle, setIndicatorStyle] = useState({ left: 0, width: 0 })
 	const linkRefs = useRef<(HTMLElement | null)[]>([])
 	const containerRef = useRef<HTMLDivElement>(null)
+
+	const sm = useMediaQuery("(max-width: 640px)")
 
 	useEffect(() => {
 		const activeEl = linkRefs.current[activeIndex]
@@ -23,10 +38,16 @@ export const NavLinks = ({ navItems }: { navItems: NavItemsTypes[] }) => {
 		setIndicatorStyle({ left: left - containerLeft, width })
 	}, [activeIndex])
 
+	const handleOpen = async () => {
+		if (!sm || !setOpen) return
+		await new Promise<void>((resolve) => setTimeout(resolve, 500))
+		setOpen((p) => !p)
+	}
+
 	return (
 		<div
 			ref={containerRef}
-			className="flex gap-[2.644rem] items-center relative"
+			className="flex max-sm:flex-col gap-[2.644rem] items-center relative"
 		>
 			{navItems.map((item, index) => {
 				const isActive = activeIndex === index
@@ -38,6 +59,7 @@ export const NavLinks = ({ navItems }: { navItems: NavItemsTypes[] }) => {
 							linkRefs.current[index] = el
 						}}
 						className="outline-0"
+						onClick={() => handleOpen()}
 					>
 						<Typography
 							variant="body-l"
@@ -47,11 +69,23 @@ export const NavLinks = ({ navItems }: { navItems: NavItemsTypes[] }) => {
 						>
 							{item.to}
 						</Typography>
+
+						{/* Underline mobile view */}
+						{sm && isActive && activeIndex !== -1 && (
+							<motion.div
+								className="h-0.5 bg-primary1300"
+								initial={{ scaleX: 0 }}
+								animate={{ scaleX: 1 }}
+								transition={{ duration: 0.25, ease: "easeOut" }}
+								style={{ width: "100%" }}
+							/>
+						)}
 					</Link>
 				)
 			})}
 
-			{activeIndex !== -1 && (
+			{/* Underline */}
+			{!sm && activeIndex !== -1 && (
 				<motion.div
 					className="absolute bottom-3 h-0.5 bg-primary1300"
 					animate={indicatorStyle}
