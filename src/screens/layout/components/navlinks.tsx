@@ -10,6 +10,7 @@ import { Typography } from "../../../ui/elements"
 import * as motion from "motion/react-client"
 import type { NavItemsTypes } from "../navbar"
 import { useMediaQuery } from "usehooks-ts"
+import clsx from "clsx"
 
 export const NavLinks = ({
 	navItems,
@@ -26,7 +27,7 @@ export const NavLinks = ({
 	const linkRefs = useRef<(HTMLElement | null)[]>([])
 	const containerRef = useRef<HTMLDivElement>(null)
 
-	const sm = useMediaQuery("(max-width: 640px)")
+	const md = useMediaQuery("(max-width: 1024px) ")
 
 	useEffect(() => {
 		const activeEl = linkRefs.current[activeIndex]
@@ -39,7 +40,7 @@ export const NavLinks = ({
 	}, [activeIndex])
 
 	const handleOpen = async () => {
-		if (!sm || !setOpen) return
+		if (!md || !setOpen) return
 		await new Promise<void>((resolve) => setTimeout(resolve, 500))
 		setOpen((p) => !p)
 	}
@@ -47,7 +48,10 @@ export const NavLinks = ({
 	return (
 		<div
 			ref={containerRef}
-			className="flex max-sm:flex-col gap-[2.644rem] items-center relative"
+			className={clsx(
+				"flex  xl:gap-[2.644rem] gap-8 items-center relative",
+				md && "flex-col gap-[2.344rem]",
+			)}
 		>
 			{navItems.map((item, index) => {
 				const isActive = activeIndex === index
@@ -65,15 +69,16 @@ export const NavLinks = ({
 							variant="body-l"
 							lineHeight="full"
 							fontWeight="medium"
+							customClassName="lg:text-base! xl:text-xl"
 							color={isActive ? "primary1300" : "tertiary600"}
 						>
 							{item.to}
 						</Typography>
 
 						{/* Underline mobile view */}
-						{sm && isActive && activeIndex !== -1 && (
+						{md && isActive && activeIndex !== -1 && (
 							<motion.div
-								className="h-0.5 bg-primary1300"
+								className="h-0.5 mt-1.5 bg-primary1300"
 								initial={{ scaleX: 0 }}
 								animate={{ scaleX: 1 }}
 								transition={{ duration: 0.25, ease: "easeOut" }}
@@ -85,9 +90,9 @@ export const NavLinks = ({
 			})}
 
 			{/* Underline */}
-			{!sm && activeIndex !== -1 && (
+			{!md && activeIndex !== -1 && (
 				<motion.div
-					className="absolute bottom-3 h-0.5 bg-primary1300"
+					className="absolute -bottom-1.5 h-0.5 bg-primary1300"
 					animate={indicatorStyle}
 					transition={{ type: "spring", stiffness: 300, damping: 30 }}
 				/>

@@ -12,13 +12,13 @@ export interface WhyListProps {
 export const WhySection = () => {
 	const [clicked, setClicked] = useState({
 		id: "",
-		open: false
+		open: false,
 	})
 
 	return (
-		<section className="py-17 sm:py-[11.313rem] grid place-content-center bg-[#FEFBFB]">
+		<section className="py-17 md:py-30 lg:py-[11.313rem] grid place-content-center bg-[#FEFBFB]">
 			<section className="max-w-[1440px] w-screen mx-auto">
-				<div className="sm:max-w-273 mb-8 grid gap-0.25 px-6 sm:px-16">
+				<div className="sm:max-w-200 lg:max-w-273 mb-8 grid gap-0.25 px-6 sm:px-16">
 					<Typography
 						variant="h4"
 						lineHeight="72"

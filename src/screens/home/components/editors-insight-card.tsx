@@ -12,10 +12,10 @@ export const EditorsInsightCard = ({
 	const { articleImg, articeTitle, articeText, editorsImg, editorsName } =
 		editorsArtice
 	return (
-		<Link to={"."} className="col-span-full sm:col-span-7">
+		<Link to={"."} className="col-span-full  lg:col-span-7">
 			<figure
 				className={clsx(
-					"w-full h-[32.813rem] sm:size-188 rounded-8 relative group overflow-hidden",
+					"w-full h-[32.813rem] sm:size-188 lg:size-150 xl:size-188 rounded-8 relative group overflow-hidden",
 				)}
 			>
 				<div
@@ -27,14 +27,14 @@ export const EditorsInsightCard = ({
 				<Image
 					img={articleImg}
 					desc="blog image"
-					imgClass="size-full rounded-8 group-hover:scale-[110%] object-cover sm:object-fill transition-all duration-400 ease-linear"
+					imgClass="size-full rounded-8 group-hover:scale-[110%] object-cover lg:object-fill transition-all duration-400 ease-linear"
 				/>
 
 				<article className="grid gap-2 pl-5.25 pr-6.75 sm:px-8 absolute z-11 bottom-8 sm:bottom-13.5">
 					<div className="flex gap-2 items-center">
 						<img
 							src={editorsImg}
-							className="rounded-full size-8 sm:size-12object-cover object-top"
+							className="rounded-full size-8 lg:size-12 object-cover object-top"
 							alt="author image"
 						/>
 						<Typography
@@ -54,7 +54,7 @@ export const EditorsInsightCard = ({
 						font="title"
 						lineHeight="60"
 						color={"neutral100"}
-						customClassName="max-sm:text-[20px] max-sm:leading-[30px]"
+						customClassName=" max-lg:leading-[30px]"
 					>
 						{articeTitle}
 					</Typography>

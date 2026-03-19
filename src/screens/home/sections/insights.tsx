@@ -9,7 +9,7 @@ export const InsightsSection = () => {
 	const sm = useMediaQuery("(max-width: 425px)")
 	return (
 		<section className="pt-11.5 pb-12 sm:pb-[5.563rem] grid place-content-center ">
-			<section className="max-w-[1440px] w-screen mx-auto px-6 sm:px-16">
+			<section className="max-w-[1440px] w-screen mx-auto px-6 sm:px-10 xl:px-16">
 				<div className="flex justify-between mb-8">
 					<Typography
 						variant="h4"
@@ -32,9 +32,9 @@ export const InsightsSection = () => {
 						</Link>
 					)}
 				</div>
-				<div className="grid grid-cols-1 sm:grid-cols-12 gap-8 sm:place-items-start">
+				<div className="grid grid-cols-1 lg:grid-cols-12 gap-8 place-items-center  lg:place-items-start">
 					<EditorsInsightCard editorsArtice={editorsArtice} />
-					<div className="grid col-span-full sm:col-span-5 gap-8">
+					<div className="grid sm:grid-cols-2 lg:grid-cols-1 col-span-full lg:col-span-5 gap-4 xl:gap-8">
 						{resourceArticles.slice(-2).map((insight) => (
 							<InsightsCard key={insight.id} insight={insight} />
 						))}

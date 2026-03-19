@@ -5,6 +5,7 @@ import { NavLinks } from "./components"
 import { useMediaQuery } from "usehooks-ts"
 import { AnimatePresence, motion } from "motion/react"
 import { useEffect, useState, type Dispatch, type SetStateAction } from "react"
+import clsx from "clsx"
 
 export interface NavItemsTypes {
 	to: string
@@ -18,7 +19,7 @@ const navItems: NavItemsTypes[] = [
 ]
 
 export const Navbar = () => {
-	const sm = useMediaQuery("(max-width: 640px)")
+	const md = useMediaQuery("(max-width: 1024px)")
 	const [open, setOpen] = useState(false)
 
 	useEffect(() => {
@@ -34,9 +35,17 @@ export const Navbar = () => {
 	}, [open])
 	return (
 		<nav className="grid place-content-center border-b w-screen fixed z-20 bg-white border-b-tertiary100">
-			<nav className="py-[1.344rem] px-8 sm:px-16 text mx-auto max-w-[1440px] w-screen flex justify-between">
+			<nav
+				className={clsx(
+					"py-[1.344rem] px-6 sm:px-12 xl:px-16 text mx-auto max-w-[1440px] w-screen items-center flex justify-between",
+				)}
+			>
 				<figure className="flex items-center gap-2">
-					<img src="/svgs/logo.svg" alt="Logo" />
+					<img
+						src="/svgs/logo.svg"
+						className="w-10.75 h-10 xl:w-11.25 xl:h-10.25"
+						alt="Logo"
+					/>
 					<Typography
 						variant="h7"
 						lineHeight="full"
@@ -46,14 +55,14 @@ export const Navbar = () => {
 						Doctor Snap
 					</Typography>
 				</figure>
-				{!sm ? (
+				{!md ? (
 					<NavLinks navItems={navItems} />
 				) : (
 					<>
 						<MobileNav open={open} setOpen={setOpen} />
 					</>
 				)}
-				{!sm && (
+				{!md && (
 					<div className="flex gap-6 items-center">
 						<Link to=".">
 							<Typography fontWeight="semi-bold" color={"tertiary600"}>
@@ -77,7 +86,7 @@ const MobileNav = ({
 }) => {
 	return (
 		<AnimatePresence>
-			<section className="hidden max-sm:grid">
+			<section className="grid">
 				<div
 					key={1}
 					className="z-50 cursor-pointer"
@@ -93,7 +102,7 @@ const MobileNav = ({
 					initial={false}
 					animate={open ? { x: 0 } : { x: 948 }}
 					transition={{ duration: 0.7 }}
-					className="bg-[#FFF] min-h-screen h-[110vh] z-40 grid place-content-center inset-0 w-screen left-0 top-[-50px] overflow-hidden fixed"
+					className="bg-[#FFF] min-h-screen h-[110vh] z-40 grid place-content-center inset-0 w-screen left-0 top-[-80px] overflow-hidden fixed"
 				>
 					<NavLinks navItems={navItems} setOpen={setOpen} />
 				</motion.div>

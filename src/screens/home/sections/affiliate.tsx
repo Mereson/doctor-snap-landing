@@ -8,7 +8,7 @@ import { useMediaQuery } from "usehooks-ts"
 export const AffiliateSection = () => {
 	const sm = useMediaQuery("(max-width: 425px)")
 	return (
-		<section className="pt-12.5 pb-17 sm:pb-31.5 max-w-[1440px] w-screen mx-auto px-7.5 sm:px-16">
+		<section className="pt-12.5 pb-17 sm:pb-31.5 max-w-[1440px] w-screen mx-auto px-7.5 sm:px-10 lg:px-16">
 			<div className="flex justify-between">
 				<Typography
 					variant="h4"
@@ -34,7 +34,7 @@ export const AffiliateSection = () => {
 			<Typography
 				variant="body-l"
 				color={"tertiary700"}
-				customClassName="max-w-[54.063rem] max-sm:text-base max-sm:leading-[32px]"
+				customClassName="max-w-[54.063rem] max-sm:leading-[32px]"
 			>
 				Explore our affiliate store for products that make healthy living
 				easier. You'll complete purchases on trusted partner sites, and every
@@ -54,7 +54,7 @@ export const AffiliateSection = () => {
 					</Link>
 				</div>
 			)}
-			<div className="mt-[4.478rem] flex sm:flex-row max-sm:items-center flex-col gap-8 justify-center">
+			<div className="mt-[4.478rem] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 gap-y-20 place-items-center">
 				{products.map((product, i) => (
 					<ProductCard key={i} product={product} />
 				))}

@@ -6,18 +6,18 @@ const typography = cva("", {
 	variants: {
 		intent: {
 			title: "text-[37.5rem]",
-			h1: "sm:text-8xl text-[2.125rem]", // 96px
+			h1: "xl:text-8xl lg:text-7xl sm:text-[3.635rem] text-[2.125rem]", // 96px
 			h2: "text-[5.25rem]", // 84px
 			h3: "text-[3.635rem]", // 58px
-			h4: "text-5xl", // 48px
-			h5: "text-[2.5rem]", // 40px
+			h4: "xl:text-5xl lg:text-4xl sm:text-[2.125rem] text-[1.75rem]", // 48px
+			h5: "xl:text-[2.5rem] lg:text-[2rem] text-[20px]", // 40px
 			h6: "text-[2.125rem]", // 34px
-			h7: "sm:text-[1.75rem] text-2xl", // 28px
+			h7: "xl:text-[1.75rem] text-2xl", // 28px
 			h8: "text-2xl", // 24px
 			h9: "text-xl", // 20px
-			"body-2xl": "text-[1.75rem]", //28px
-			"body-xl": "sm:text-2xl text-base", // 24px
-			"body-l": "text-xl", // 20px
+			"body-2xl": "xl:text-[1.75rem] text-xl", //28px
+			"body-xl": "xl:text-2xl sm:text-xl text-sm", // 24px
+			"body-l": "lg:text-xl text-base", // 20px
 			"body-m": "text-lg", // 18px
 			"body-r": "text-base", //16px
 			"body-s": "text-sm", // 14px

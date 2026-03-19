@@ -14,7 +14,7 @@ export const WhyCard = ({
 	setClicked: Dispatch<SetStateAction<{ id: string; open: boolean }>>
 }) => {
 	const { assetIcon, title, text } = whyList
-	const sm = useMediaQuery("(max-width: 640px)")
+	const sm = useMediaQuery("(max-width: 1024px)")
 
 	const handleClick = () => {
 		if (!sm) return
