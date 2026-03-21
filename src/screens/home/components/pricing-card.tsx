@@ -17,7 +17,7 @@ export const PricingCard = ({ packages }: { packages: PackagesTypes }) => {
 					: "[box-shadow:0px_1px_4px_0px_#0C0C0D0D,0px_1px_4px_0px_#0C0C0D1A]",
 			)}
 		>
-			<div className="flex max-[375px]:flex-col justify-between items-start px-4 sm:px-8 pb-2.25 border-b border-b-neutral-200">
+			<div className="flex max-[375px]:flex-col justify-between items-start px-4 sm:px-6 xl:px-8 pb-2.25 border-b border-b-neutral-200">
 				<div className="max-[375px]:mt-0 mt-3.75 grid gap-2.5">
 					<Typography
 						variant="body-l"

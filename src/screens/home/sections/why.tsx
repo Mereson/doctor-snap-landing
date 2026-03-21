@@ -33,7 +33,7 @@ export const WhySection = () => {
 						it.
 					</Typography>
 				</div>
-				<div className="flex flex-wrap justify-center gap-8 mx-9 sm:mx-0 items-start">
+				<div className="flex flex-wrap justify-center gap-8 px-9 xl:px-0  xl:items-start">
 					{whyList.map((item) => (
 						<WhyCard
 							key={item.id}

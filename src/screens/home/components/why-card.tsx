@@ -32,7 +32,7 @@ export const WhyCard = ({
 			onClick={() => handleClick()}
 			className={clsx(
 				"px-7.5 pt-52.5 pb-8.5 rounded-6 max-sm:max-w-104 sm:w-76 hover:w-104 hover:[box-shadow:0px_2px_6px_2px_#00000026,0px_1px_2px_0px_#0000004D] overflow-hidden group cursor-pointer bg-white",
-				"transition-all duration-500 ease-linear",
+				"transition-all duration-500 ease-linear relative",
 				sm && openCard && "w-104! pt-43.5! pb-5.5!",
 				"hover:pt-43.5 hover:pb-5.5",
 			)}
@@ -53,7 +53,7 @@ export const WhyCard = ({
 
 			<div
 				className={clsx(
-					"flex justify-end px-2.5 mt-5.5 max-h-23",
+					"flex justify-end px-2.5 mt-5.5 max-h-23 relative ",
 					"group-hover:mt-0 duration-300 ease-linear transition-all",
 					"group-hover:opacity-0 ",
 					sm && openCard && "mt-0 opacity-100",

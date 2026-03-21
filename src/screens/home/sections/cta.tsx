@@ -6,10 +6,9 @@ export const CTASection = () => {
 			<Typography
 				variant="h4"
 				font="title"
-				lineHeight="72"
 				color={"primary1300"}
 				align="center"
-				customClassName="max-sm:text-[32px] max-sm:leading-[38px]"
+				customClassName="max-sm:text-[32px] leading-[38px] sm:leading-[49px] lg:leading-[60px] xl:leading-[72px]"
 			>
 				Your care starts here. Book an online appointment today.
 			</Typography>

@@ -32,7 +32,7 @@ export const InsightsSection = () => {
 						</Link>
 					)}
 				</div>
-				<div className="grid grid-cols-1 lg:grid-cols-12 gap-8 place-items-center  lg:place-items-start">
+				<div className="grid grid-cols-1 lg:grid-cols-12 gap-8 place-items-center lg:place-items-start">
 					<EditorsInsightCard editorsArtice={editorsArtice} />
 					<div className="grid sm:grid-cols-2 lg:grid-cols-1 col-span-full lg:col-span-5 gap-4 xl:gap-8">
 						{resourceArticles.slice(-2).map((insight) => (

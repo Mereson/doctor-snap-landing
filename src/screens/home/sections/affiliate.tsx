@@ -8,7 +8,7 @@ import { useMediaQuery } from "usehooks-ts"
 export const AffiliateSection = () => {
 	const sm = useMediaQuery("(max-width: 425px)")
 	return (
-		<section className="pt-12.5 pb-17 sm:pb-31.5 max-w-[1440px] w-screen mx-auto px-7.5 sm:px-10 lg:px-16">
+		<section className="pt-12.5 pb-17 sm:pb-31.5 max-w-[1440px] w-screen mx-auto px-7.5 sm:px-10 xl:px-16">
 			<div className="flex justify-between">
 				<Typography
 					variant="h4"

@@ -25,8 +25,8 @@ export const ContactSection = () => {
 	})
 
 	return (
-		<section className="grid place-content-center bg-[#FEFBFB] pt-12.5 pb-[2.438rem]">
-			<section className="max-w-[1440px] mx-auto grid place-content-center">
+		<section className="grid  bg-[#FEFBFB] pt-12.5 pb-[2.438rem]">
+			<section className="max-w-[1440px] mx-auto w-full grid px-3.5 md:px-10 lg:px-0 lg:place-content-center">
 				<div className="max-sm:px-20 max-[375px]:px-10! grid max-sm:gap-3">
 				<Typography
 					variant="h4"
@@ -44,8 +44,8 @@ export const ContactSection = () => {
 				</div>
 				<div
 					className={clsx(
-						"rounded-7 grid gap-[3.063rem] px-5 sm:px-13 pt-[2.688rem] pb-[2.938rem] max-sm:mx-3.5 mt-6.25",
-						"max-w-[60.563rem] sm:w-screen place-items-center",
+						"rounded-7 grid gap-[3.063rem] px-5 md:px-13 pt-[2.688rem] pb-[2.938rem] mt-6.25",
+						"max-w-[60.563rem] w-full lg:w-screen place-items-center",
 						"bg-white [box-shadow:0px_1px_3px_1px_#00000026,0px_1px_2px_0px_#0000004D]",
 					)}
 				>

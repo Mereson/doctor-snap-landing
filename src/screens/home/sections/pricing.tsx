@@ -17,7 +17,7 @@ export const PricingSection = () => {
 					font="title"
 					color={"primary1300"}
 					align="center"
-					customClassName="leading-[38px] sm:leading-[5.438rem]!  mb-4 max-sm:text-[32px]"
+					customClassName="leading-[38px] sm:leading-[5.438rem]! mb-4 sm:mb-0 lg:mb-4 "
 				>
 					Transparent Pricing
 				</Typography>
@@ -28,7 +28,7 @@ export const PricingSection = () => {
 				{isLoading ? (
 					"Loading..."
 				) : (
-					<div className="mt-7.5 gap-8 grid grid-cols-1 max-sm:px-5 sm:grid-cols-3 place-items-center place-content-center">
+					<div className="mt-7.5 gap-8 grid grid-cols-1 px-5 md:grid-cols-2 lg:grid-cols-3 place-items-center place-content-center">
 						{packagesList.map((packages, i) => (
 							<PricingCard key={i} packages={packages} />
 						))}

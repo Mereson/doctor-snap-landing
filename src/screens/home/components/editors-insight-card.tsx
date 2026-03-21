@@ -3,6 +3,7 @@ import { Image, Typography } from "../../../ui/elements"
 import { Link } from "@tanstack/react-router"
 import type { EditorsArticeType } from "../../../lib/types"
 import { ReadArticleButton } from "../../layout"
+import { useMediaQuery } from "usehooks-ts"
 
 export const EditorsInsightCard = ({
 	editorsArtice,
@@ -11,11 +12,13 @@ export const EditorsInsightCard = ({
 }) => {
 	const { articleImg, articeTitle, articeText, editorsImg, editorsName } =
 		editorsArtice
+
+		const mid = useMediaQuery("(max-width:1240px) and (min-width:1024px)")
 	return (
 		<Link to={"."} className="col-span-full  lg:col-span-7">
 			<figure
 				className={clsx(
-					"w-full h-[32.813rem] sm:size-188 lg:size-150 xl:size-188 rounded-8 relative group overflow-hidden",
+					"w-full h-[32.813rem] sm:size-full rounded-8 relative group overflow-hidden",
 				)}
 			>
 				<div
@@ -54,7 +57,7 @@ export const EditorsInsightCard = ({
 						font="title"
 						lineHeight="60"
 						color={"neutral100"}
-						customClassName=" max-lg:leading-[30px]"
+						customClassName={clsx("max-md:leading-[30px]", mid && "text-[1.7rem]! leading-13!")}
 					>
 						{articeTitle}
 					</Typography>

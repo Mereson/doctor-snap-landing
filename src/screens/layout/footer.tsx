@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router"
 import { Typography } from "../../ui/elements"
 import { Logo } from "./logo"
 import { ApplicationRoutes } from "../../routes"
+import clsx from "clsx"
 
 const currentYear = new Date().getFullYear()
 
@@ -9,8 +10,8 @@ export const Footer = () => {
 	return (
 		<footer className="max-w-[1440px] mx-auto p-2 sm:p-8 ">
 			<section className="rounded-8 bg-primary1300 max-sm:px-4.25 p-8">
-				<div className="grid grid-cols-5 max-sm:gap-[2.563rem] pb-[2.563rem] sm:pb-16 border-b-2 border-b-[#B5DDE73D]">
-					<div className="col-span-full sm:col-span-2 grid gap-6">
+				<div className="grid grid-cols-5 max-sm:gap-[2.563rem] gap-15  lg:gap-0 pb-[2.563rem] sm:pb-16 border-b-2 border-b-[#B5DDE73D]">
+					<div className="col-span-full md:col-span-2 grid gap-6">
 						<figure className="flex items-center gap-2">
 							<Logo fill="fill-primary1200" />
 							<Typography
@@ -32,7 +33,12 @@ export const Footer = () => {
 						</Typography>
 					</div>
 
-					<div className="col-span-full sm:col-span-2 flex flex-col sm:flex-row items-start gap-[2.563rem] sm:gap-43.5 ">
+					<div
+						className={clsx(
+							"col-span-full md:col-span-3 lg:col-span-2 flex flex-col sm:flex-row items-start md:justify-between lg:justify-normal ",
+							"md:pl-10 lg:pl-0 gap-[2.563rem] max-md:gap-x-43.5 lg:gap-35 xl:gap-43.5",
+						)}
+					>
 						<div className="grid gap-6">
 							<Typography
 								variant="body-m"
@@ -90,7 +96,7 @@ export const Footer = () => {
 						</div>
 					</div>
 
-					<div className="max-sm:grid">
+					<div className="max-sm:grid col-span-full lg:col-span-1">
 						<Typography
 							variant="body-m"
 							fontWeight="medium"
@@ -98,7 +104,7 @@ export const Footer = () => {
 						>
 							Connect
 						</Typography>
-						<div className="flex gap-4 mt-6">
+						<div className="flex gap-2 xl:gap-4 mt-6">
 							<figure className="size-12 rounded-3 items-center justify-center flex bg-primary1100">
 								<img src="/svgs/linkedin.svg" alt="linkedin logo" />
 							</figure>
