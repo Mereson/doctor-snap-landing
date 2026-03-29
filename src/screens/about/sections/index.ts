@@ -1,0 +1,5 @@
+export * from "./about-hero"
+export * from "./welcome"
+export * from "./creation-story"
+export * from "./what-we-want"
+export * from "./about-cta"

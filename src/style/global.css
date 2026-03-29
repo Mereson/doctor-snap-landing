@@ -1,0 +1,99 @@
+@import "tailwindcss";
+
+@theme {
+	--font-source-serif-4: "Source Serif 4";
+	--font-roboto-flex: "Roboto Flex";
+	--color-primary10: #0d23291a;
+	--color-primary100: #cee8ef;
+	--color-primary200: #b5dde7;
+	--color-primary300: #9cd1e0;
+	--color-primary400: #83c6d8;
+	--color-primary500: #6bbad0;
+	--color-primary600: #52afc8;
+	--color-primary700: #3ca2bd;
+	--color-primary800: #348da5;
+	--color-primary900: #2c778c;
+	--color-primary1000: #256273;
+	--color-primary1100: #1d4d5a;
+	--color-primary1200: #153842;
+	--color-primary1300: #0d2329;
+	--color-primary1400: #0a1a1e;
+	--color-secondary10: #d1ff5d1a;
+	--color-secondary100: #f4ffd7;
+	--color-secondary200: #e8ffae;
+	--color-secondary300: #dcff86;
+	--color-secondary400: #d1ff5d;
+	--color-secondary500: #c8ff3d;
+	--color-secondary600: #bfff1d;
+	--color-secondary700: #b4fb00;
+	--color-secondary800: #9ddb00;
+	--color-secondary900: #86bb00;
+	--color-secondary1000: #6f9b00;
+	--color-secondary1100: #587a00;
+	--color-secondary1200: #405a00;
+	--color-neutral10: #3333331a;
+	--color-neutral100: #ffffff;
+	--color-neutral200: #e8e8e8;
+	--color-neutral300: #d2d2d2;
+	--color-neutral400: #bbbbbb;
+	--color-neutral500: #a4a4a4;
+	--color-neutral600: #8e8e8e;
+	--color-neutral700: #777777;
+	--color-neutral800: #606060;
+	--color-neutral900: #4a4a4a;
+	--color-neutral1000: #333333;
+	--color-tertiary10: #46595e1a;
+	--color-tertiary100: #c6d2d5;
+	--color-tertiary200: #aabbc0;
+	--color-tertiary300: #8ea5ab;
+	--color-tertiary400: #718e96;
+	--color-tertiary500: #5b747a;
+	--color-tertiary600: #46595e;
+	--color-tertiary700: #324044;
+	--color-tertiary800: #1f2729;
+	--color-red10: #fb37481a;
+	--color-red100: #fb3748;
+	--color-red200: #d00416;
+	--color-yellow10: #ffdb431a;
+	--color-yellow100: #ffdb43;
+	--color-yellow200: #dfb400;
+	--color-green10: #1fc16b1a;
+	--color-green100: #84ebb4;
+	--color-green200: #1fc16b;
+	--radius-rounded-none: 0px; /* 0 */
+	--radius-1: 0.125rem; /* 2 */
+	--radius-2: 0.25rem; /* 4 */
+	--radius-3: 0.375rem; /* 6 */
+	--radius-4: 0.5rem; /* 8 */
+	--radius-5: 0.625rem; /* 10px */
+	--radius-6: 0.75rem; /* 12 */
+	--radius-7: 1rem; /* 16 */
+	--radius-8: 1.25rem; /* 20px */
+	--radius-9: 1.5rem; /* 24px */
+	--radius-10: 1.75rem; /* 28px */
+	--radius-11: 2rem; /* 32px */
+	--radius-12: 2.25rem; /* 36px */
+	--radius-13: 2.5rem; /* 40px */
+	--radius-14: 3rem; /* 48px */
+	--animate-carousel: carousel 10s infinite linear;
+}
+
+@keyframes carousel {
+	from {
+	  transform: translateX(0);
+	}
+	to {
+	  transform: translateX(-100%);
+	}
+  }
+  
+  .animate-carousel {
+	animation: var(--animate-carousel);
+	will-change: transform;
+	backface-visibility: hidden;
+	-webkit-backface-visibility: hidden;
+  }
+
+.borderr {
+	border: 1px solid rgb(158, 43, 43);
+}
