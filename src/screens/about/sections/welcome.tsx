@@ -7,7 +7,8 @@ export const Welcome = () => {
 		<section
 			className={clsx(
 				" bg-center bg-linear-[180deg,#FEFBFB_0%,#E4FEE01F_100%]",
-				"py-28 grid place-items-center gap-12.25 max-h-[48.938rem] w-screen relative",
+				"pt-13 grid place-items-center gap-11.25 sm:gap-12.25 max-h-[48.938rem] w-screen relative",
+				"sm:py-28",
 			)}
 		>
 			<Typography
@@ -15,17 +16,20 @@ export const Welcome = () => {
 				font="title"
 				align="center"
 				color={"primary1300"}
-				customClassName="max-w-[35.813rem] leading-[70px]! text-[54px] z-10"
+				customClassName={clsx(
+					"max-w-[35.813rem] text-[28px] z-10 px-3.75",
+					"sm:text-[54px] sm:leading-[70px]!",
+				)}
 			>
 				Welcome to <i> Doctor Snap</i> By Ryzone Renal.
 			</Typography>
 			<img src="/svgs/plus-sign.svg" className="z-10" alt="plus sign" />
-			<div className="p-15 rounded-8 z-10 [box-shadow:0px_10px_40px_4px_#80A08726] bg-white">
+			<div className="px-6.5 pt-13 pb-11 sm:p-15 rounded-8 z-10 max-sm:mt-12.5 mx-6 [box-shadow:0px_10px_40px_4px_#80A08726] bg-white">
 				<Typography
 					variant="body-2xl"
 					color={"primary1200"}
 					align="center"
-					customClassName="max-w-[50.25rem] leading-12"
+					customClassName="max-w-[50.25rem] max-sm:leading-11 leading-12 max-sm:text-sm"
 				>
 					My name is Arinze Ikeme, MD, FACP.{" "}
 					<span className="font-semibold">
@@ -33,11 +37,11 @@ export const Welcome = () => {
 						I am a board-certified Internist and Nephrologist
 					</span>{" "}
 					practicing in the United States, with over 12 years of experience
-					caring for patients across diverse communities.
+					caring for patients  across diverse communities.
 				</Typography>
 			</div>
 
-			<div className="absolute h-full w-full max-w-[2160px] flex overflow-hidden items-center">
+			<div className="absolute h-full w-full max-w-[2160px] max-md:top-40 flex overflow-hidden items-center">
 				<div className="flex shrink-0 min-w-full">
 					<CarouselComponent title={title} />
 					<CarouselComponent aria title={title} />

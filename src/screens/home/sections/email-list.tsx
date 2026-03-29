@@ -12,8 +12,8 @@ export const EmailListSection = () => {
 	return (
 		<section
 			className={clsx(
-				"max-w-[1600px] mx-auto pt-[4.438rem] w-screen pb-24 grid place-content-center relative",
-				"bg-[url(/images/minimalist-home.png)] bg-center bg-cover",
+				"max-w-[1600px] mx-auto pt-17 sm:pt-[4.438rem] w-screen max-sm:px-6 pb-[3.313rem] sm:pb-24 grid place-content-center relative",
+				"bg-[url(/images/minimalist-home-small.png)] sm:bg-[url(/images/minimalist-home.png)] bg-center bg-cover",
 			)}
 		>
 			<div className="size-full bg-[#0000004D] absolute"></div>
@@ -24,15 +24,21 @@ export const EmailListSection = () => {
 					lineHeight="72"
 					color={"neutral100"}
 					align="center"
+					customClassName="max-sm:text-[32px] max-sm:leading-[38px]"
 				>
 					Stay Healthy, Stay Informed
 				</Typography>
-				<Typography lineHeight="32" color={"neutral100"} align="center">
+				<Typography
+					lineHeight="32"
+					color={"neutral100"}
+					align="center"
+					customClassName="max-sm:px-3 max-sm:text-sm max-sm:leading-[21px]"
+				>
 					Join our weekly newsletter for doctor-approved health tips, new device
 					reviews, and community updates.
 				</Typography>
 			</div>
-			<div className="mt-5.5 flex gap-8 z-10 items-center">
+			<div className="mt-8 sm:mt-5.5 flex flex-col sm:flex-row gap-8 z-10 items-center">
 				<form.Field
 					name="userEmail"
 					children={(field) => (

@@ -1,6 +1,6 @@
 import clsx from "clsx"
 import type { EditorsArticeType } from "../../../lib/types"
-import { Typography } from "../../../ui/elements"
+import { Image, Typography } from "../../../ui/elements"
 import { Link } from "@tanstack/react-router"
 import { ClockIcon, ReadArticleButton } from "../../layout"
 import { TagBadge } from "./tag-badge"
@@ -25,7 +25,7 @@ export const EditorsArticleHero = ({
 		<Link to={"."}>
 			<figure
 				className={clsx(
-					"my-14 rounded-7 group max-h-130 h-screen max-w-327.5 w-screen relative",
+					"mt-7 sm:my-14 rounded-7 group max-h-130 h-screen max-w-327.5 w-full relative",
 				)}
 			>
 				<div
@@ -35,13 +35,14 @@ export const EditorsArticleHero = ({
 					)}
 				></div>
 
-				<img
-					src={articleImg}
-					className="rounded-7 w-full h-full object-cover"
-					alt="article image"
+				<Image
+					img={articleImg}
+					desc="article image"
+					imgClass="rounded-7 w-full h-full  object-cover"
+					priority
 				/>
 
-				<article className=" px-8 absolute bottom-[2.063rem]">
+				<article className="px-4 sm:px-8 absolute w-full bottom-[2.063rem]">
 					<div className="flex gap-2 mb-4 items-center">
 						<img
 							src={editorsImg}
@@ -64,7 +65,7 @@ export const EditorsArticleHero = ({
 							variant="h5"
 							font="title"
 							color={"neutral100"}
-							customClassName="max-w-[33.75rem] leading-12"
+							customClassName="max-w-[33.75rem] leading-6 md:leading-10 lg:leading-12"
 						>
 							{articeTitle}
 						</Typography>
@@ -77,9 +78,9 @@ export const EditorsArticleHero = ({
 							{articeText}
 						</Typography>
 					</div>
-					<div className="flex items-center mt-6 justify-between w-screen max-w-[75.813rem]">
+					<div className="flex sm:items-center sm:flex-row gap-y-4 flex-col mt-6 sm:justify-between w-full max-w-[75.813rem]">
 						<div className="flex gap-4 items-center">
-							<TagBadge tag={tag}/>
+							<TagBadge tag={tag} />
 							<div className="flex items-center gap-1.5">
 								<ClockIcon strokeColor="white" />
 								<Typography

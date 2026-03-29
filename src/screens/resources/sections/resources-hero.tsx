@@ -5,7 +5,7 @@ import { BookIcon } from "../../layout"
 
 export const ResourcesHero = () => {
 	return (
-		<section className="pt-48.5 pb-14">
+		<section className="pt-42 lg:pt-48.5 pb-14">
 			<article className="grid gap-3 pb-5.25">
 				<figure className="flex gap-3 items-center">
 					<figure className="rounded-5 p-2.25 bg-primary1300">

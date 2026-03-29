@@ -10,7 +10,7 @@ export const CoreValues = ({
 	return (
 		<div
 			className={clsx(
-				"bg-white border-[1.11px] py-3 px-6 rounded-full border-[#E0EAED] flex items-center gap-3 ",
+				"bg-white border-[1.11px] max-sm:w-full py-3 px-4 sm:px-6 rounded-full border-[#E0EAED] flex items-center gap-3 ",
 				"[box-shadow:0px_2px_12px_0px_#0000000A] transition-all duration-250 ease-linear",
 				value === "Compassion" &&
 					"hover:border-[#14EDB9] hover:[box-shadow:0px_2px_12px_0px_#14EDB9B8]",
@@ -24,12 +24,12 @@ export const CoreValues = ({
 		>
 			{value === "Compassion" && (
 				<figure className="rounded-full p-2.25 bg-[#14EDB925]">
-					<img src="/svgs/heart-Icon-green.svg" alt="heart icon" />
+					<img src="/svgs/heart-Icon-green.svg" className="size-4.5" alt="heart icon" />
 				</figure>
 			)}
 			{value === "Accessibility" && (
 				<figure className="rounded-full p-2.25 bg-[#73D3F125]">
-					<img src="/svgs/people-Icon.svg" alt="people icon" />
+					<img src="/svgs/people-Icon.svg" className="size-4.5" alt="people icon" />
 				</figure>
 			)}
 			{value === "Education" && (
@@ -39,7 +39,7 @@ export const CoreValues = ({
 			)}
 			{value === "Integrity" && (
 				<figure className="rounded-full p-2.25 bg-[#1D4D5A25]">
-					<img src="/svgs/shield-Icon.svg" alt="shield icon" />
+					<img src="/svgs/shield-Icon.svg" className="size-4.5" alt="shield icon" />
 				</figure>
 			)}
 			<Typography

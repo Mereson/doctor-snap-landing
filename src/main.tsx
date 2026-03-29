@@ -3,6 +3,7 @@ import { StrictMode } from "react"
 import { createRoot } from "react-dom/client"
 import { routeTree } from "./routeTree.gen"
 import "./style/global.css"
+import Providers from "./providers"
 
 const router = createRouter({
 	routeTree,
@@ -16,6 +17,8 @@ declare module "@tanstack/react-router" {
 
 createRoot(document.getElementById("root")!).render(
 	<StrictMode>
-		<RouterProvider router={router} />
+		<Providers>
+			<RouterProvider router={router} />
+		</Providers>
 	</StrictMode>,
 )

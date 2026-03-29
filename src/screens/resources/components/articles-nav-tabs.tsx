@@ -9,7 +9,7 @@ export const ArticlesNavTabs = () => {
 	const articlesTags = useMemo(() => getArticlesTags(resourceArticles), [])
 
 	return (
-		<div className="flex gap-2">
+		<div className="flex items-center flex-wrap gap-y-4 gap-2">
 			<NavTab tagName="All" />
 			{articlesTags.map((tagName, i) => (
 				<NavTab key={i} tagName={tagName} />

@@ -59,7 +59,7 @@ export const ResourcesArticles = () => {
 						({filteredArticles.length})
 					</Typography>
 				</div>
-				<div className="grid grid-cols-3 gap-8">
+				<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 place-content-center gap-8">
 					{[...filteredArticles].reverse().map((article) => (
 						<ArticlesCard key={article.id} article={article} />
 					))}

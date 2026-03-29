@@ -7,7 +7,7 @@ import {
 
 export const WhatWeWant = () => {
 	return (
-		<section className="max-w-[1440px] mx-auto pl-16.75 pr-15.5 py-[2.938rem] grid gap-16">
+		<section className="max-w-[1440px] mx-auto px-6 md:px-10 xl:pl-16.75 xl:pr-15.5 pt-25 pb-[3.313rem] sm:py-[2.938rem] grid gap-16">
 			<article className="grid gap-4 w-full max-w-143">
 				<Typography
 					variant="h4"
@@ -22,12 +22,12 @@ export const WhatWeWant = () => {
 					touch through Doctor Snap.
 				</Typography>
 			</article>
-			<div className="px-2.5 grid grid-cols-3 gap-12.5">
+			<div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-12.5">
 				{principlesList.map((principles, i) => (
 					<WhatWeWantCards key={i} props={principles} />
 				))}
 			</div>
-			<div className="flex justify-center items-center gap-4">
+			<div className="flex flex-wrap justify-center items-center gap-4">
 				<CoreValues value="Compassion" />
 				<CoreValues value="Accessibility" />
 				<CoreValues value="Education" />

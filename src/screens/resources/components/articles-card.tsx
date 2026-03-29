@@ -22,7 +22,7 @@ export const ArticlesCard = ({
 					"bg-white [box-shadow:0px_4px_16px_0px_#00000026]",
 				)}
 			>
-				<figure className="rounded-7 relative max-h-[15.688rem] h-screen max-w-[23.563rem] w-screen">
+				<figure className="rounded-7 relative max-h-[15.688rem] h-screen w-full max-w-127 sm:max-w-[23.563rem]">
 					<img
 						src={articleImg}
 						className="rounded-7 h-full w-full"

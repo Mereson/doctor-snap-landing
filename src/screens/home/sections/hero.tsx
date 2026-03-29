@@ -1,6 +1,10 @@
-import { Button, Typography } from "../../../ui/elements"
+import { useMediaQuery } from "usehooks-ts"
+import { Button, Image, Typography } from "../../../ui/elements"
+import clsx from "clsx"
 
 export const Hero = () => {
+	const sm = useMediaQuery("(max-width: 640px)")
+	const md = useMediaQuery("(max-width: 769px) and (min-width: 640px)")
 	return (
 		<section className="grid place-content-center overflow-hidden relative">
 			<svg className="absolute inset-0 w-full h-full pointer-events-none opacity-10">
@@ -14,12 +18,12 @@ export const Hero = () => {
 				</filter>
 				<rect width="100%" height="100%" filter="url(#multinoise)" />
 			</svg>
-			<section className="pt-53.5 grid max-w-[1600px] mx-auto place-items-center">
+			<section className="pt-39.5 sm:pt-53.5 grid max-w-[1600px] mx-auto place-items-center">
 				<Typography
 					variant="h1"
 					font={"title"}
-					customClassName="max-w-[62.375rem]"
-					lineHeight="full"
+					customClassName="lg:max-w-[62.375rem] md:max-w-[40rem] sm:px-10"
+					lineHeight={sm ? "40" : md ? "64" : "full"}
 					align="center"
 				>
 					Accessible healthcare,{" "}
@@ -27,7 +31,10 @@ export const Hero = () => {
 				</Typography>
 				<Typography
 					variant="body-xl"
-					customClassName="mt-6 mb-8 max-w-[42.625rem]"
+					customClassName={clsx(
+						"mt-6 mb-8 max-w-[42.625rem] px-7.25 ",
+					)}
+					lineHeight={sm ? "20" : md ? "28" : "36"}
 					align="center"
 				>
 					Access top-notch healthcare without insurance limits and connect with
@@ -35,7 +42,7 @@ export const Hero = () => {
 				</Typography>
 				<Button primary text="Book appointment" />
 				<section className="mt-[2.313rem] z-10 bg-white relative">
-					<div className="absolute inset-0  pointer-events-none">
+					<div className="absolute inset-0 pointer-events-none">
 						<svg className="absolute z-10 w-full h-full pointer-events-none opacity-10">
 							<filter id="multinoise">
 								<feTurbulence
@@ -47,11 +54,31 @@ export const Hero = () => {
 							</filter>
 							<rect width="100%" height="100%" filter="url(#multinoise)" />
 						</svg>
-						<div className="bg-white h-29 backdrop-blur-[82px] mask-b-from-50% " />
+						<div
+							className={clsx(
+								"bg-white h-29 backdrop-blur-[82px] mask-b-from-50%",
+								sm && "h-15!",
+							)}
+						/>
 						{/* <div className="bg-white top-[-60px] relative backdrop-blur-[82px] h-14 mask-b-from-0% " /> */}
 					</div>
-
-					<img src="/images/Hero-img.png" className=" w-full " alt="Hero Image" />
+					<Image
+						img={
+							sm || md ? "/images/Hero-img-small.png" : "/images/Hero-img.png"
+						}
+						avif={
+							sm || md ? "/images/Hero-img-small.avif" : "/images/Hero-img.avif"
+						}
+						webp={
+							sm || md ? "/images/Hero-img-small.webp" : "/images/Hero-img.webp"
+						}
+						desc="Hero Image"
+						imgClass={clsx(
+							"w-full",
+							md && "h-[25.688rem] object-cover w-screen",
+						)}
+						priority
+					/>
 				</section>
 			</section>
 		</section>
