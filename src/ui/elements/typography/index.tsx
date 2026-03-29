@@ -7,7 +7,7 @@ const typography = cva("", {
 		intent: {
 			title: "text-[37.5rem]",
 			h1: "xl:text-8xl lg:text-7xl sm:text-[3.635rem] text-[2.125rem]", // 96px
-			h2: "text-[5.25rem]", // 84px
+			h2: "xl:text-[5.25rem] sm:text-[3.325rem] text-[2rem]", // 84px
 			h3: "lg:text-[3.635rem] sm:text-4xl text-[32px]", // 58px
 			h4: "xl:text-5xl lg:text-4xl sm:text-[2.125rem] text-[1.75rem]", // 48px
 			h5: "xl:text-[2.5rem] md:text-[2rem] text-[20px]", // 40px

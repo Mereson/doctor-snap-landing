@@ -31,7 +31,7 @@ export const WhatWeWantCards = ({ props }: { props: WhatWeWantCardProps }) => {
 			></div>
 			<div
 				className={clsx(
-					" w-full pl-[21.99px] pr-[9.3px] pt-9 pb-10.25 grid gap-4",
+					" w-full xl:pl-[21.99px] xl:pr-[9.3px] pt-9 pb-10.25 grid gap-4",
 				)}
 			>
 				{type === "Vision" && (
@@ -61,7 +61,7 @@ export const WhatWeWantCards = ({ props }: { props: WhatWeWantCardProps }) => {
 				<Typography
 					lineHeight="28"
 					color={"tertiary600"}
-					customClassName="max-w-[20.063rem] pb-7"
+					customClassName="lg:max-w-[20.063rem] pb-7"
 				>
 					{text}
 				</Typography>

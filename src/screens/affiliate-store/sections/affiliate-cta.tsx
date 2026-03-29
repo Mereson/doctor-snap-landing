@@ -6,14 +6,14 @@ export const AffiliateCTA = () => {
 		<section className="pt-25 pb-16.5">
 			<div
 				className={clsx(
-					"rounded-9 w-screen max-w-327.5 pt-[3.986rem] pb-[4.204rem] grid gap-8",
+					"rounded-9 w-full px-7.25 pt-[3.986rem] pb-[4.204rem] grid gap-8",
 					"place-content-center relative",
 					"bg-linear-[180deg,#0D2329_0%,#122F37_50%,#1D4D5A_100%]",
 				)}
 			>
 				<img
 					src="/svgs/dots.svg"
-					className="absolute top-6 left-[67px]"
+					className="absolute top-6 xl:left-[67px]"
 					alt="dots"
 				/>
 				<article className="grid gap-5 max-w-142.5">
@@ -21,7 +21,7 @@ export const AffiliateCTA = () => {
 						variant="h5"
 						font="title"
 						align="center"
-						customClassName="text-[42px]! leading-[50px]"
+						customClassName="text-[28px] sm:text-[32px] lg:text-[42px] leading-[42px] lg:leading-[50px]"
 						color={"neutral100"}
 					>
 						Ready to explore products that {""}

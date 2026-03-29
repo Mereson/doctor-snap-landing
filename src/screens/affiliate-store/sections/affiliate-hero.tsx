@@ -2,10 +2,13 @@ import { Link } from "@tanstack/react-router"
 import { Typography } from "../../../ui/elements"
 import { ProductCard } from "../../home/components"
 import { products } from "../../../lib/mock-data/product-data"
+import { useMediaQuery } from "usehooks-ts"
 
 export const AffiliateHero = () => {
+	const sm = useMediaQuery("(max-width: 640px)")
+
 	return (
-		<section className="pb-29.5">
+		<section className="pb-16 lg:pb-29.5">
 			<div className="flex justify-between mb-4">
 				<Typography
 					variant="h3"
@@ -15,15 +18,17 @@ export const AffiliateHero = () => {
 				>
 					Our Affiliate Store
 				</Typography>
-				<Link to={"."}>
-					<Typography
-						fontWeight="medium"
-						customClassName="underline"
-						color={"primary1200"}
-					>
-						Visit Affliliate Store
-					</Typography>
-				</Link>
+				{!sm && (
+					<Link to={"."}>
+						<Typography
+							fontWeight="medium"
+							customClassName="underline"
+							color={"primary1200"}
+						>
+							Visit Affliliate Store
+						</Typography>
+					</Link>
+				)}
 			</div>
 			<Typography
 				variant="body-l"
@@ -35,7 +40,19 @@ export const AffiliateHero = () => {
 				order supports our mission to make healthcare accessible.
 			</Typography>
 
-			<div className="mt-[4.478rem] flex gap-8 justify-center">
+			{sm && (
+					<Link to={"."}>
+						<Typography
+							fontWeight="medium"
+							customClassName="underline mt-8"
+							color={"primary1200"}
+						>
+							Visit Affliliate Store
+						</Typography>
+					</Link>
+				)}
+
+			<div className="mt-[4.478rem] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 place-items-center">
 				{products.map((product, i) => (
 					<ProductCard key={i} product={product} />
 				))}

@@ -2,7 +2,7 @@ import { Button, Typography } from "../../../ui/elements"
 
 export const CTASection = () => {
 	return (
-		<section className="max-w-172.5 mx-auto max-sm:px-7 py-25 grid gap-4 place-content-center">
+		<section className="max-w-172.5 mx-auto max-sm:px-7 py-25 max-lg:pb-15 grid gap-4 place-content-center">
 			<Typography
 				variant="h4"
 				font="title"
