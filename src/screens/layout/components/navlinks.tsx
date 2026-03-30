@@ -41,7 +41,7 @@ export const NavLinks = ({
 
 	const handleOpen = async () => {
 		if (!md || !setOpen) return
-		await new Promise<void>((resolve) => setTimeout(resolve, 500))
+		await new Promise<void>((resolve) => setTimeout(resolve, 300))
 		setOpen((p) => !p)
 	}
 

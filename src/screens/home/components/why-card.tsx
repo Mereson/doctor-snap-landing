@@ -34,7 +34,7 @@ export const WhyCard = ({
 				"px-7.5 pt-52.5 pb-8.5 rounded-6 max-sm:max-w-104 sm:w-76 hover:w-104 hover:[box-shadow:0px_2px_6px_2px_#00000026,0px_1px_2px_0px_#0000004D] overflow-hidden group cursor-pointer bg-white",
 				"transition-all duration-500 ease-linear relative",
 				sm && openCard && "w-104! pt-43.5! pb-5.5!",
-				"hover:pt-43.5 hover:pb-5.5",
+				"hover:pt-43.5 hover:pb-5.5 max-md:shadow",
 			)}
 		>
 			<div className="mb-2.5 bg-secondary200 w-fit rounded-3 p-2.5">
