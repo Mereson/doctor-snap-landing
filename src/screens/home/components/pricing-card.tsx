@@ -12,7 +12,7 @@ export const PricingCard = ({ packages }: { packages: PackagesTypes }) => {
 		<div
 			className={clsx(
 				"rounded-11 bg-white pt-6 pb-9 sm:pb-15 col-span-1 max-w-104 w-full",
-				packageClass === "C"
+				packageClass === "B"
 					? "[box-shadow:0px_8px_12px_4px_#D9FF79]"
 					: "[box-shadow:0px_1px_4px_0px_#0C0C0D0D,0px_1px_4px_0px_#0C0C0D1A]",
 			)}
