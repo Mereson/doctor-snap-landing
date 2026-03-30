@@ -101,7 +101,7 @@ const MobileNav = ({
 					key={2}
 					initial={false}
 					animate={open ? { x: 0 } : { x: 1440 }}
-					transition={{ duration: 0.7 }}
+					transition={{ duration: 0.5 }}
 					className="bg-[#FFF] min-h-screen h-[110vh] z-40 grid place-content-center inset-0 w-screen left-0 top-[-80px] overflow-hidden fixed"
 				>
 					<NavLinks navItems={navItems} setOpen={setOpen} />
