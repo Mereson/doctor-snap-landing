@@ -4,7 +4,6 @@ const BASE_URL = import.meta.env.VITE_BACKEND_URL
 
 const getAllPackages = async () => {
 	try {
-		console.log(BASE_URL)
 		const res = await fetch(`${BASE_URL}/package`)
 
 		const result = await res.json()

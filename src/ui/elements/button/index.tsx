@@ -11,6 +11,7 @@ interface ButtonProps {
 	width?: "w-full" | "w-fit"
 	type?: "button" | "submit" | undefined
 	loading?: boolean
+	auth?: boolean
 	onClick?: () => unknown
 }
 
@@ -26,6 +27,7 @@ const Button: React.FC<ButtonProps> = (props) => {
 		type = "button",
 		onClick,
 		loading,
+		auth,
 		...rest
 	} = props
 	return (
@@ -71,13 +73,19 @@ const Button: React.FC<ButtonProps> = (props) => {
 			>
 				{text}
 
-				{secondary && (
-					<img
-						src="/svgs/arrow-right-Icon.svg"
-						className="size-6 group-hover:translate-x-1 transition-all duration-300 ease-out"
-						alt="arrow right"
-					/>
-				)}
+				{secondary ||
+					(auth && (
+						<div className="flex items-center">
+							<img
+								src="/svgs/arrow-right-Icon.svg"
+								className={clsx(
+									"size-6 group-hover:translate-x-1 transition-all duration-300 ease-out",
+									auth && "size-4.5!",
+								)}
+								alt="arrow right"
+							/>
+						</div>
+					))}
 			</button>
 		</div>
 	)
