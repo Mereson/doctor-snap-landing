@@ -27,7 +27,7 @@ export const UserIcon = () => {
 				className="cursor-pointer rounded-full p-2 bg-primary1100"
 			>
 				<img
-					src="/public/svgs/user-regular-full.svg"
+					src="/svgs/user-regular-full.svg"
 					className="size-6"
 					alt="user-icon"
 				/>

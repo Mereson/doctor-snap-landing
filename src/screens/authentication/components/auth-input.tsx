@@ -49,7 +49,7 @@ export const AuthInput: React.FC<AuthInputProps> = (props) => {
 						className="cursor-pointer"
 					>
 						<img
-							src="/public/svgs/Eye-gray.svg"
+							src="/svgs/Eye-gray.svg"
 							className="size-4.5"
 							alt="password visibility icon"
 						/>
