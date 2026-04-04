@@ -1,3 +1,5 @@
 export * from "./welcome-card"
 export * from "./login-card"
 export * from "./signup-card"
+export * from "./continue-with-google"
+export * from "./auth-input"

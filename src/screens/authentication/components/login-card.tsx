@@ -4,24 +4,35 @@ import { Button, Typography } from "../../../ui/elements"
 import { loginSchema, type LoginSchemaType } from "../../../lib"
 import { useForm } from "@tanstack/react-form"
 import { AuthInput } from "./auth-input"
-import { Link } from "@tanstack/react-router"
+import { Link, useNavigate } from "@tanstack/react-router"
 import { ApplicationRoutes } from "../../../routes"
 import { ContinueWithGoogle } from "./continue-with-google"
+import { useUserLogin } from "../../../lib/services"
+import { useUserContext } from "../../../context"
 
 export const LoginCard = () => {
+	const { setUser } = useUserContext()
+	const { mutateAsync: login, isPending, isSuccess } = useUserLogin()
+
+	const navigate = useNavigate()
+
 	const defaultState: LoginSchemaType = {
 		email: "",
 		password: "",
 		remember: false,
 	}
 
-	const form = useForm({
+	const formInput = useForm({
 		defaultValues: defaultState,
 		validators: {
 			onSubmit: loginSchema,
 		},
 		onSubmit: async ({ value }) => {
-			console.log(value)
+			const res = await login(value)
+			if (isSuccess) {
+				setUser(res.user)
+				navigate({ to: ApplicationRoutes.HOME })
+			}
 		},
 	})
 
@@ -46,8 +57,8 @@ export const LoginCard = () => {
 					Enter your credentials to access your account
 				</Typography>
 			</div>
-			<div className="grid gap-6 w-full mt-8 mb-6">
-				<form.Field
+			<form className="grid gap-6 w-full mt-8 mb-6">
+				<formInput.Field
 					name="email"
 					children={(field) => (
 						<AuthInput
@@ -58,7 +69,7 @@ export const LoginCard = () => {
 						/>
 					)}
 				/>
-				<form.Field
+				<formInput.Field
 					name="password"
 					children={(field) => (
 						<AuthInput
@@ -72,7 +83,7 @@ export const LoginCard = () => {
 				/>
 				<div className="flex items-center justify-between">
 					<div className="flex gap-2 items-center">
-						<form.Field
+						<formInput.Field
 							name="remember"
 							children={(field) => (
 								<input
@@ -103,9 +114,10 @@ export const LoginCard = () => {
 					width="w-full"
 					text="Log in"
 					auth
-					onClick={() => form.handleSubmit()}
+					onClick={() => formInput.handleSubmit()}
+					loading={isPending}
 				/>
-			</div>
+			</form>
 			<ContinueWithGoogle />
 			<div className="mt-6 flex gap-1 w-full items-center justify-center">
 				<Typography

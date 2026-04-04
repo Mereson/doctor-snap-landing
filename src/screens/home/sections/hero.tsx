@@ -1,6 +1,7 @@
 import { useMediaQuery } from "usehooks-ts"
 import { Button, Image, Typography } from "../../../ui/elements"
 import clsx from "clsx"
+import { scrollToSection } from "../../../lib"
 
 export const Hero = () => {
 	const sm = useMediaQuery("(max-width: 640px)")
@@ -31,16 +32,18 @@ export const Hero = () => {
 				</Typography>
 				<Typography
 					variant="body-xl"
-					customClassName={clsx(
-						"mt-6 mb-8 max-w-[42.625rem] px-7.25 ",
-					)}
+					customClassName={clsx("mt-6 mb-8 max-w-[42.625rem] px-7.25 ")}
 					lineHeight={sm ? "20" : md ? "28" : "36"}
 					align="center"
 				>
 					Access top-notch healthcare without insurance limits and connect with
 					specialists to manage your health data clearly.
 				</Typography>
-				<Button primary text="Book appointment" />
+				<Button
+					primary
+					text="Book appointment"
+					onClick={() => scrollToSection("pricing-section")}
+				/>
 				<section className="mt-[2.313rem] z-10 bg-white relative">
 					<div className="absolute inset-0 pointer-events-none">
 						<svg className="absolute z-10 w-full h-full pointer-events-none opacity-10">

@@ -6,7 +6,7 @@ import { useMediaQuery } from "usehooks-ts"
 import { useEffect, useState } from "react"
 import clsx from "clsx"
 import { useUserContext } from "../../context"
-
+import { Logo } from "./logo"
 
 export interface NavItemsTypes {
 	to: string
@@ -45,11 +45,8 @@ export const Navbar = () => {
 				)}
 			>
 				<figure className="flex items-center gap-2">
-					<img
-						src="/svgs/logo.svg"
-						className="w-10.75 h-10 xl:w-11.25 xl:h-10.25"
-						alt="Logo"
-					/>
+					<Logo />
+
 					<Typography
 						variant="h7"
 						lineHeight="full"

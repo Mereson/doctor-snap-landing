@@ -63,7 +63,7 @@ export const AuthInput: React.FC<AuthInputProps> = (props) => {
 				>
 					<Typography
 						key={i}
-						variant="body-s"
+						variant="body-xs"
 						color={"red100"}
 						customClassName="leading-[21px]"
 					>

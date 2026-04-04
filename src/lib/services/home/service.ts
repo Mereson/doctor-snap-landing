@@ -18,11 +18,10 @@ const getAllPackages = async () => {
 	}
 }
 
-export const useGetAllPackages = () => {
-    return useQuery({
-        queryKey: ["All Packages"],
-        queryFn: async () => {
-            return await getAllPackages()
-        }
-    })
-}
+export const useGetAllPackages = () =>
+	useQuery({
+		queryKey: ["All Packages"],
+		queryFn: async () => {
+			return await getAllPackages()
+		},
+	})

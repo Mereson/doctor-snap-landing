@@ -14,26 +14,28 @@ export const UserIcon = () => {
 		}
 
 		if (modalIsOpen) {
-			document.addEventListener("mousedown", handleClickOutside)
+			document.addEventListener("click", handleClickOutside)
 		}
 
-		return () => document.removeEventListener("mousedown", handleClickOutside)
+		return () => document.removeEventListener("click", handleClickOutside)
 	}, [modalIsOpen, setModalIsOpen])
 
 	return (
-		<>
+		<div ref={modalRef}>
 			<div
-				onClick={() => setModalIsOpen((p) => !p)}
-				className="cursor-pointer rounded-full p-2 bg-primary1100"
+				onClick={(e) => {
+					e.stopPropagation()
+					setModalIsOpen((p) => !p)
+				}}
+				className="cursor-pointer rounded-full p-2 bg-primary100"
 			>
 				<img
-					src="/svgs/user-regular-full.svg"
+					src="/svgs/user-icon.svg"
 					className="size-6"
 					alt="user-icon"
 				/>
 			</div>
-
 			{modalIsOpen && <UserModal modalRef={modalRef} />}
-		</>
+		</div>
 	)
 }

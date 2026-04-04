@@ -6,6 +6,6 @@ export const ApplicationRoutes = {
 	ABOUT: "/about",
 	AFFILIATE_STORE: "/affiliate-store",
 	RESOURCES: "/resources",
-	LOGIN: "/login",
-	SIGNUP: "/signup"
+	LOGIN: "/auth/login",
+	SIGNUP: "/auth/signup"
 } as const

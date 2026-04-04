@@ -40,7 +40,7 @@ const Button: React.FC<ButtonProps> = (props) => {
 					"hover:[box-shadow:0px_1px_3px_0px_#0000004D,0px_4px_8px_3px_#00000026]",
 			)}
 		>
-			{primary && (
+			{primary && !loading && (
 				<div
 					className={clsx(
 						" absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-400 ease-linear pointer-events-none ",
@@ -59,13 +59,13 @@ const Button: React.FC<ButtonProps> = (props) => {
 				className={clsx(
 					"w-full cursor-pointer rounded-full py-4 px-6.25 font-semibold justify-center font-roboto-flex ",
 					"transition-colors duration-200 ease-linear flex gap-2 items-center",
-					primary && "bg-primary1300! text-white",
+					primary && "bg-primary1300 text-white",
 					secondary &&
 						"bg-secondary900 text-white hover:bg-secondary1100 transition-colors duration-300 ease-out",
-					neutral && "bg-white text-primary1300s ",
+					neutral && "bg-white text-primary1300 ",
 					negative &&
 						"bg-white text-primary1200 px-7 border-primary1200 border-[1.11px] hover:bg-primary1200 hover:text-white duration-300!",
-					loading && "bg-gray-300 cursor-not-allowed!",
+					loading && "bg-neutral-500! cursor-not-allowed!",
 					customClassname,
 				)}
 				disabled={loading}
@@ -79,8 +79,9 @@ const Button: React.FC<ButtonProps> = (props) => {
 							<img
 								src="/svgs/arrow-right-Icon.svg"
 								className={clsx(
-									"size-6 group-hover:translate-x-1 transition-all duration-300 ease-out",
+									"size-6 transition-all duration-300 ease-out",
 									auth && "size-4.5!",
+									!loading && "group-hover:translate-x-1"
 								)}
 								alt="arrow right"
 							/>

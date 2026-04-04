@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react"
 import { type UserDataType } from "../lib/types"
 import { UserContext } from "./userContext"
-import { socialSignIn } from "../lib/services"
+import { useSocialSignIn } from "../lib/services"
 
 export const UserProvider = ({ children }: { children: React.ReactNode }) => {
 	const [user, setUserState] = useState<UserDataType | null>(null)
 	const [modalIsOpen, setModalIsOpen] = useState(false)
+
+	const { mutateAsync: socialSignIn } = useSocialSignIn()
 
 	const setUser = (user: UserDataType | null) => {
 		if (user) sessionStorage.setItem("user", JSON.stringify(user))
@@ -29,7 +31,7 @@ export const UserProvider = ({ children }: { children: React.ReactNode }) => {
 			}
 		}
 		initialiseUser()
-	}, [])
+	}, [socialSignIn])
 
 	return (
 		<UserContext.Provider

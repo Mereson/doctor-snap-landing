@@ -1,8 +1,8 @@
-import type { RefObject } from "react"
+import { type RefObject } from "react"
 import { Typography } from "../../../ui/elements"
 import { Link } from "@tanstack/react-router"
 import { useUserContext } from "../../../context"
-import { userSignOut } from "../../../lib/services"
+import { useUserSignOut } from "../../../lib/services"
 
 export const UserModal = ({
 	modalRef,
@@ -11,6 +11,8 @@ export const UserModal = ({
 }) => {
 	const { user, setUser, setModalIsOpen } = useUserContext()
 
+	const { mutateAsync: logout } = useUserSignOut()
+
 	if (!user) {
 		return
 	}
@@ -18,7 +20,7 @@ export const UserModal = ({
 	const { firstName, lastName, email } = user
 
 	const handleLogout = async () => {
-		await userSignOut()
+		await logout()
 		setUser(null)
 		setModalIsOpen(false)
 	}
@@ -50,6 +52,13 @@ export const UserModal = ({
 					Account Settings
 				</Typography>
 			</Link>
+			{user.role === "ADMIN" && (
+				<Link to=".">
+					<Typography variant="body-s" lineHeight={"18"} fontWeight="semi-bold">
+						Dashboard
+					</Typography>
+				</Link>
+			)}
 			<p className="w-full h-0.5 bg-primary10"></p>
 			<button onClick={() => handleLogout()} className="cursor-pointer">
 				<Typography

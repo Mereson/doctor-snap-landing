@@ -2,12 +2,26 @@ import clsx from "clsx"
 import { Button, Typography } from "../../../ui/elements"
 import type { PackagesTypes } from "../../../lib/types"
 import { useMediaQuery } from "usehooks-ts"
+import { useUserContext } from "../../../context"
+import { useNavigate } from "@tanstack/react-router"
+import { ApplicationRoutes } from "../../../routes"
 
 export const PricingCard = ({ packages }: { packages: PackagesTypes }) => {
-	const { packageName, packageClass, packageType, features, packagePrice } =
+	const { user } = useUserContext()
+	const { id, packageName, packageClass, packageType, features, packagePrice } =
 		packages
 
+	const navigate = useNavigate()
+
 	const sm = useMediaQuery("(max-width: 640px)")
+
+	const handleClick = async () => {
+		if (!user) {
+			navigate({ to: ApplicationRoutes.LOGIN })
+			return
+		}
+		console.log(id)
+	}
 	return (
 		<div
 			className={clsx(
@@ -111,6 +125,7 @@ export const PricingCard = ({ packages }: { packages: PackagesTypes }) => {
 					secondary
 					text="Reserve Package"
 					width={sm ? "w-full" : "w-fit"}
+					onClick={() => handleClick()}
 				/>
 			</div>
 		</div>

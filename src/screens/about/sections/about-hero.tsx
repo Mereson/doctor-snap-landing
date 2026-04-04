@@ -1,10 +1,8 @@
 import clsx from "clsx"
 import { Button, Image, Typography } from "../../../ui/elements"
-import { useNavigate } from "@tanstack/react-router"
-import { ApplicationRoutes } from "../../../routes"
+import { scrollToSection } from "../../../lib"
 
 export const AboutHero = () => {
-	const navigate = useNavigate()
 	return (
 		<section
 			className={clsx(
@@ -28,9 +26,7 @@ export const AboutHero = () => {
 				</Typography>
 
 				<Button
-					onClick={() =>
-						navigate({ to: ApplicationRoutes.ABOUT, hash: "#creation-story" })
-					}
+					onClick={() => scrollToSection("creation-story")}
 					text="Our Story"
 					negative
 				/>
