@@ -5,11 +5,14 @@ import { useMediaQuery } from "usehooks-ts"
 import { useUserContext } from "../../../context"
 import { useNavigate } from "@tanstack/react-router"
 import { ApplicationRoutes } from "../../../routes"
+import { usePurchasePackage } from "../../../lib/services"
 
 export const PricingCard = ({ packages }: { packages: PackagesTypes }) => {
 	const { user } = useUserContext()
 	const { id, packageName, packageClass, packageType, features, packagePrice } =
 		packages
+
+	const { mutateAsync: purchasePackage, isPending } = usePurchasePackage()
 
 	const navigate = useNavigate()
 
@@ -20,8 +23,9 @@ export const PricingCard = ({ packages }: { packages: PackagesTypes }) => {
 			navigate({ to: ApplicationRoutes.LOGIN })
 			return
 		}
-		console.log(id)
+		await purchasePackage(id)
 	}
+
 	return (
 		<div
 			className={clsx(
@@ -109,7 +113,7 @@ export const PricingCard = ({ packages }: { packages: PackagesTypes }) => {
 					lineHeight="full"
 					customClassName="max-sm:text-base"
 				>
-					{packagePrice}
+					${packagePrice}
 				</Typography>
 				<Typography
 					variant="body-s"
@@ -126,6 +130,7 @@ export const PricingCard = ({ packages }: { packages: PackagesTypes }) => {
 					text="Reserve Package"
 					width={sm ? "w-full" : "w-fit"}
 					onClick={() => handleClick()}
+					loading={isPending}
 				/>
 			</div>
 		</div>

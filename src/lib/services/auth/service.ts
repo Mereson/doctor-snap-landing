@@ -138,14 +138,13 @@ const userSignOut = async () => {
  * --------------------------
  * @description User sign up hook
  */
-export const useUserSignUp = () => {
-	return useMutation({
+export const useUserSignUp = () =>
+	useMutation({
 		mutationKey: ["Sign up"],
 		mutationFn: async (data: SignupSchemaType) => {
 			return await signup(data)
 		},
 	})
-}
 
 /**
  * ------------------------
@@ -153,14 +152,13 @@ export const useUserSignUp = () => {
  * ------------------------
  * @description Login hook
  */
-export const useUserLogin = () => {
-	return useMutation({
+export const useUserLogin = () =>
+	useMutation({
 		mutationKey: ["Login"],
 		mutationFn: async (data: LoginSchemaType) => {
 			return await login(data)
 		},
 	})
-}
 
 /**
  * ----------------------------
@@ -168,14 +166,13 @@ export const useUserLogin = () => {
  * ----------------------------
  * @description Social sigin hook
  */
-export const useSocialSignIn = () => {
-	return useMutation({
+export const useSocialSignIn = () =>
+	useMutation({
 		mutationKey: ["Social Sign In"],
 		mutationFn: async () => {
 			return await socialSignIn()
 		},
 	})
-}
 
 /**
  * ---------------------------
@@ -183,11 +180,10 @@ export const useSocialSignIn = () => {
  * ---------------------------
  * @description Signout hook
  */
-export const useUserSignOut = () => {
-	return useMutation({
+export const useUserSignOut = () =>
+	useMutation({
 		mutationKey: ["User Sign Out"],
 		mutationFn: async () => {
 			return await userSignOut()
 		},
 	})
-}
