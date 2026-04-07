@@ -1,16 +1,18 @@
 import { Link } from "@tanstack/react-router"
-import { Button, HamburgerIcon, Typography } from "../../ui/elements"
+import { Button, Typography } from "../../ui/elements"
 import { ApplicationRoutes } from "../../routes"
-import { NavLinks } from "./components"
+import { MobileNav, NavLinks, UserIcon } from "./components"
 import { useMediaQuery } from "usehooks-ts"
-import { AnimatePresence, motion } from "motion/react"
-import { useEffect, useState, type Dispatch, type SetStateAction } from "react"
+import { useEffect, useState } from "react"
 import clsx from "clsx"
+import { useUserContext } from "../../context"
+import { Logo } from "./logo"
 
 export interface NavItemsTypes {
 	to: string
 	href: string
 }
+
 const navItems: NavItemsTypes[] = [
 	{ to: "Home", href: ApplicationRoutes.HOME },
 	{ to: "About", href: ApplicationRoutes.ABOUT },
@@ -21,6 +23,8 @@ const navItems: NavItemsTypes[] = [
 export const Navbar = () => {
 	const md = useMediaQuery("(max-width: 1024px)")
 	const [open, setOpen] = useState(false)
+
+	const { user } = useUserContext()
 
 	useEffect(() => {
 		if (open) {
@@ -41,11 +45,8 @@ export const Navbar = () => {
 				)}
 			>
 				<figure className="flex items-center gap-2">
-					<img
-						src="/svgs/logo.svg"
-						className="w-10.75 h-10 xl:w-11.25 xl:h-10.25"
-						alt="Logo"
-					/>
+					<Logo />
+
 					<Typography
 						variant="h7"
 						lineHeight="full"
@@ -59,54 +60,24 @@ export const Navbar = () => {
 					<NavLinks navItems={navItems} />
 				) : (
 					<>
-						<MobileNav open={open} setOpen={setOpen} />
+						<MobileNav open={open} setOpen={setOpen} navItems={navItems} />
 					</>
 				)}
-				{!md && (
+				{!md && !user && (
 					<div className="flex gap-6 items-center">
-						<Link to=".">
+						<Link to={ApplicationRoutes.LOGIN}>
 							<Typography fontWeight="semi-bold" color={"tertiary600"}>
 								Log in
 							</Typography>
 						</Link>
-						<Button primary text="Create Account" />
+						<Link to={ApplicationRoutes.SIGNUP}>
+							<Button primary text="Create Account" />
+						</Link>
 					</div>
 				)}
+
+				{user && <UserIcon />}
 			</nav>
 		</nav>
-	)
-}
-
-const MobileNav = ({
-	open,
-	setOpen,
-}: {
-	open: boolean
-	setOpen: Dispatch<SetStateAction<boolean>>
-}) => {
-	return (
-		<AnimatePresence>
-			<section className="grid">
-				<div
-					key={1}
-					className="z-50 cursor-pointer"
-					onClick={() => {
-						setOpen((p) => !p)
-					}}
-				>
-					<HamburgerIcon open={open} color={"black"} />
-				</div>
-
-				<motion.div
-					key={2}
-					initial={false}
-					animate={open ? { x: 0 } : { x: 1440 }}
-					transition={{ duration: 0.5 }}
-					className="bg-[#FFF] min-h-screen h-[110vh] z-40 grid place-content-center inset-0 w-screen left-0 top-[-80px] overflow-hidden fixed"
-				>
-					<NavLinks navItems={navItems} setOpen={setOpen} />
-				</motion.div>
-			</section>
-		</AnimatePresence>
 	)
 }
