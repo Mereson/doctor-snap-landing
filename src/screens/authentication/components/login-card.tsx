@@ -39,17 +39,18 @@ export const LoginCard = () => {
 	return (
 		<div
 			className={clsx(
-				"col-span-1 px-16 pt-16 pb-8 rounded-8",
+				"col-span-1 max-[340px]:px-6 px-8 sm:px-16 md:px-8 lg:px-16 pt-16 pb-10 rounded-8",
 				"border border-[#E8F0F2] shadow-[0px_8px_40px_0px_#0000000F]",
 			)}
 		>
+			
 			<div>
 				<Logo />
 				<Typography
 					variant="h5"
 					font="title"
 					color={"primary1300"}
-					customClassName="leading-[60px] mt-6 mb-2"
+					customClassName="leading-[60px] lg:mt-6 lg:mb-2"
 				>
 					Log in
 				</Typography>
@@ -81,8 +82,8 @@ export const LoginCard = () => {
 						/>
 					)}
 				/>
-				<div className="flex items-center justify-between">
-					<div className="flex gap-2 items-center">
+				<div className="flex items-center justify-end">
+					{/* <div className="flex gap-2 items-center">
 						<formInput.Field
 							name="remember"
 							children={(field) => (
@@ -100,7 +101,7 @@ export const LoginCard = () => {
 						>
 							Remember me
 						</Typography>
-					</div>
+					</div> */}
 					<Typography
 						variant="body-s"
 						color={"primary1100"}

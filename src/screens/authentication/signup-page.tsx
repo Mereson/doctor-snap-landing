@@ -55,14 +55,14 @@ export const SignupPage = () => {
 	})
 
 	return (
-		<section className="max-w-[1440px] mx-auto bg-white w-full p-8">
+		<section className="max-w-[1440px] mx-auto bg-white w-full p-5 sm:p-8">
 			<Logo />
 			<div className="grid gap-16 w-full max-w-[42.188rem] mx-auto">
-				<div className="pt-8"></div>
+				<div className=" sm:pt-8"></div>
 				<div
 					className={clsx(
 						"bg-white border border-[#E8F0F2] w-full",
-						"shadow-[0px_8px_40px_0px_#0000000F] rounded-8 p-16",
+						"shadow-[0px_8px_40px_0px_#0000000F] rounded-8 max-[340px]:px-6 px-8 max-[570px]:pb-10 py-16 sm:px-16",
 					)}
 				>
 					<article>
@@ -78,17 +78,20 @@ export const SignupPage = () => {
 								font="title"
 								variant="h6"
 								color={"primary1300"}
-								customClassName="leading-[51px]"
+								customClassName="max-[408px]:text-[1.5rem] max-[408px]:leading-[32px] leading-[51px]"
 							>
 								Create your account
 							</Typography>
 						</div>
-						<Typography color={"tertiary600"} customClassName="leading-[32px]">
+						<Typography
+							color={"tertiary600"}
+							customClassName="max-[408px]:leading-7 leading-[32px] max-[408px]:mt-1"
+						>
 							Let's start with your basic information
 						</Typography>
 					</article>
 					<form className="pt-3.25 pb-8 grid gap-6">
-						<div className="grid grid-cols-2 gap-6 place-items-start">
+						<div className="grid max-[425px]:grid-cols-1 grid-cols-2 gap-6 place-items-start">
 							<formInput.Field
 								name="firstName"
 								children={(field) => (
@@ -134,8 +137,8 @@ export const SignupPage = () => {
 							)}
 						/>
 					</form>
-					<div className="border-t border-t-primary10 flex justify-between py-4">
-						<div className=" flex gap-1 w-full items-center">
+					<div className=" border-t border-t-primary10 flex justify-between py-4">
+						<div className="flex gap-1 w-full items-center max-[570px]:hidden">
 							<Typography
 								variant="body-s"
 								color={"tertiary600"}
@@ -153,7 +156,7 @@ export const SignupPage = () => {
 								</Typography>
 							</Link>
 						</div>
-						<div className="max-w-[12.938rem] w-full">
+						<div className="max-[570px]:max-w-full max-w-[12.938rem] w-full">
 							<Button
 								primary
 								text="Continue"
@@ -165,6 +168,25 @@ export const SignupPage = () => {
 						</div>
 					</div>
 					<ContinueWithGoogle />
+
+					<div className="hidden gap-1 w-full mt-6 items-center justify-center max-[570px]:flex">
+						<Typography
+							variant="body-s"
+							color={"tertiary600"}
+							customClassName="leading-[21px]"
+						>
+							Already have an account?
+						</Typography>
+						<Link to={ApplicationRoutes.LOGIN}>
+							<Typography
+								fontWeight="semi-bold"
+								color={"primary1100"}
+								customClassName="leading-[24px]"
+							>
+								Log in
+							</Typography>
+						</Link>
+					</div>
 				</div>
 			</div>
 		</section>

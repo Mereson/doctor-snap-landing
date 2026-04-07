@@ -4,7 +4,7 @@ import { handleGoogleCall } from "../../../lib/services"
 
 export const ContinueWithGoogle = () => {
 	return (
-		<div className="w-full px-8 grid gap-3">
+		<div className="w-full lg:px-8 grid gap-3">
 			<div className="flex items-center gap-2.5 py-0.5">
 				<p className="w-full h-0.5 bg-primary10"></p>
 				<Typography
@@ -16,7 +16,7 @@ export const ContinueWithGoogle = () => {
 				</Typography>
 				<p className="w-full h-0.5 bg-primary10"></p>
 			</div>
-			<div className="px-7.25">
+			<div className="max-[400px]:px-0 px-7.25">
 				<button
 					type="submit"
 					onClick={async () => await handleGoogleCall()}
