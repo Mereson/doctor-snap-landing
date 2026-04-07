@@ -41,3 +41,11 @@ export interface PackagesTypes {
 	}[]
 	packagePrice: string
 }
+
+export interface UserDataType {
+	id: string
+	firstName: string
+	lastName: string
+	email: string
+	role: "ADMIN" | "USER"
+}

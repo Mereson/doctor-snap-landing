@@ -2,12 +2,30 @@ import clsx from "clsx"
 import { Button, Typography } from "../../../ui/elements"
 import type { PackagesTypes } from "../../../lib/types"
 import { useMediaQuery } from "usehooks-ts"
+import { useUserContext } from "../../../context"
+import { useNavigate } from "@tanstack/react-router"
+import { ApplicationRoutes } from "../../../routes"
+import { usePurchasePackage } from "../../../lib/services"
 
 export const PricingCard = ({ packages }: { packages: PackagesTypes }) => {
-	const { packageName, packageClass, packageType, features, packagePrice } =
+	const { user } = useUserContext()
+	const { id, packageName, packageClass, packageType, features, packagePrice } =
 		packages
 
+	const { mutateAsync: purchasePackage, isPending } = usePurchasePackage()
+
+	const navigate = useNavigate()
+
 	const sm = useMediaQuery("(max-width: 640px)")
+
+	const handleClick = async () => {
+		if (!user) {
+			navigate({ to: ApplicationRoutes.LOGIN })
+			return
+		}
+		await purchasePackage(id)
+	}
+
 	return (
 		<div
 			className={clsx(
@@ -95,7 +113,7 @@ export const PricingCard = ({ packages }: { packages: PackagesTypes }) => {
 					lineHeight="full"
 					customClassName="max-sm:text-base"
 				>
-					{packagePrice}
+					${packagePrice}
 				</Typography>
 				<Typography
 					variant="body-s"
@@ -111,6 +129,8 @@ export const PricingCard = ({ packages }: { packages: PackagesTypes }) => {
 					secondary
 					text="Reserve Package"
 					width={sm ? "w-full" : "w-fit"}
+					onClick={() => handleClick()}
+					loading={isPending}
 				/>
 			</div>
 		</div>

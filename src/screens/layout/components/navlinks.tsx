@@ -49,7 +49,7 @@ export const NavLinks = ({
 		<div
 			ref={containerRef}
 			className={clsx(
-				"flex  xl:gap-[2.644rem] gap-8 items-center relative",
+				"flex xl:gap-[2.644rem] gap-8 items-center relative",
 				md && "flex-col gap-[2.344rem]",
 			)}
 		>

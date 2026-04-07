@@ -9,12 +9,20 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as AuthRouteImport } from './routes/auth'
 import { Route as LayoutRouteImport } from './routes/_layout'
 import { Route as LayoutIndexRouteImport } from './routes/_layout.index'
+import { Route as AuthSignupRouteImport } from './routes/auth.signup'
+import { Route as AuthLoginRouteImport } from './routes/auth.login'
 import { Route as LayoutResourcesRouteImport } from './routes/_layout.resources'
 import { Route as LayoutAffiliateStoreRouteImport } from './routes/_layout.affiliate-store'
 import { Route as LayoutAboutRouteImport } from './routes/_layout.about'
 
+const AuthRoute = AuthRouteImport.update({
+  id: '/auth',
+  path: '/auth',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const LayoutRoute = LayoutRouteImport.update({
   id: '/_layout',
   getParentRoute: () => rootRouteImport,
@@ -23,6 +31,16 @@ const LayoutIndexRoute = LayoutIndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => LayoutRoute,
+} as any)
+const AuthSignupRoute = AuthSignupRouteImport.update({
+  id: '/signup',
+  path: '/signup',
+  getParentRoute: () => AuthRoute,
+} as any)
+const AuthLoginRoute = AuthLoginRouteImport.update({
+  id: '/login',
+  path: '/login',
+  getParentRoute: () => AuthRoute,
 } as any)
 const LayoutResourcesRoute = LayoutResourcesRouteImport.update({
   id: '/resources',
@@ -42,44 +60,78 @@ const LayoutAboutRoute = LayoutAboutRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof LayoutIndexRoute
+  '/auth': typeof AuthRouteWithChildren
   '/about': typeof LayoutAboutRoute
   '/affiliate-store': typeof LayoutAffiliateStoreRoute
   '/resources': typeof LayoutResourcesRoute
+  '/auth/login': typeof AuthLoginRoute
+  '/auth/signup': typeof AuthSignupRoute
 }
 export interface FileRoutesByTo {
+  '/auth': typeof AuthRouteWithChildren
   '/about': typeof LayoutAboutRoute
   '/affiliate-store': typeof LayoutAffiliateStoreRoute
   '/resources': typeof LayoutResourcesRoute
+  '/auth/login': typeof AuthLoginRoute
+  '/auth/signup': typeof AuthSignupRoute
   '/': typeof LayoutIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/_layout': typeof LayoutRouteWithChildren
+  '/auth': typeof AuthRouteWithChildren
   '/_layout/about': typeof LayoutAboutRoute
   '/_layout/affiliate-store': typeof LayoutAffiliateStoreRoute
   '/_layout/resources': typeof LayoutResourcesRoute
+  '/auth/login': typeof AuthLoginRoute
+  '/auth/signup': typeof AuthSignupRoute
   '/_layout/': typeof LayoutIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/affiliate-store' | '/resources'
+  fullPaths:
+    | '/'
+    | '/auth'
+    | '/about'
+    | '/affiliate-store'
+    | '/resources'
+    | '/auth/login'
+    | '/auth/signup'
   fileRoutesByTo: FileRoutesByTo
-  to: '/about' | '/affiliate-store' | '/resources' | '/'
+  to:
+    | '/auth'
+    | '/about'
+    | '/affiliate-store'
+    | '/resources'
+    | '/auth/login'
+    | '/auth/signup'
+    | '/'
   id:
     | '__root__'
     | '/_layout'
+    | '/auth'
     | '/_layout/about'
     | '/_layout/affiliate-store'
     | '/_layout/resources'
+    | '/auth/login'
+    | '/auth/signup'
     | '/_layout/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   LayoutRoute: typeof LayoutRouteWithChildren
+  AuthRoute: typeof AuthRouteWithChildren
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/auth': {
+      id: '/auth'
+      path: '/auth'
+      fullPath: '/auth'
+      preLoaderRoute: typeof AuthRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/_layout': {
       id: '/_layout'
       path: ''
@@ -93,6 +145,20 @@ declare module '@tanstack/react-router' {
       fullPath: '/'
       preLoaderRoute: typeof LayoutIndexRouteImport
       parentRoute: typeof LayoutRoute
+    }
+    '/auth/signup': {
+      id: '/auth/signup'
+      path: '/signup'
+      fullPath: '/auth/signup'
+      preLoaderRoute: typeof AuthSignupRouteImport
+      parentRoute: typeof AuthRoute
+    }
+    '/auth/login': {
+      id: '/auth/login'
+      path: '/login'
+      fullPath: '/auth/login'
+      preLoaderRoute: typeof AuthLoginRouteImport
+      parentRoute: typeof AuthRoute
     }
     '/_layout/resources': {
       id: '/_layout/resources'
@@ -135,8 +201,21 @@ const LayoutRouteChildren: LayoutRouteChildren = {
 const LayoutRouteWithChildren =
   LayoutRoute._addFileChildren(LayoutRouteChildren)
 
+interface AuthRouteChildren {
+  AuthLoginRoute: typeof AuthLoginRoute
+  AuthSignupRoute: typeof AuthSignupRoute
+}
+
+const AuthRouteChildren: AuthRouteChildren = {
+  AuthLoginRoute: AuthLoginRoute,
+  AuthSignupRoute: AuthSignupRoute,
+}
+
+const AuthRouteWithChildren = AuthRoute._addFileChildren(AuthRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   LayoutRoute: LayoutRouteWithChildren,
+  AuthRoute: AuthRouteWithChildren,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

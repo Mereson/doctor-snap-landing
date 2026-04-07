@@ -1,4 +1,5 @@
 import { Button, Typography } from "../../../ui/elements"
+import { scrollToSection } from "../../../lib"
 
 export const CTASection = () => {
 	return (
@@ -17,7 +18,11 @@ export const CTASection = () => {
 				get care that's accessible, affordable, and built around your needs.
 			</Typography>
 			<div className="mt-[39px] sm:mt-2 flex justify-center">
-				<Button text="Book appointment" primary />
+				<Button
+					text="Book appointment"
+					primary
+					onClick={() => scrollToSection("pricing-section")}
+				/>
 			</div>
 		</section>
 	)
